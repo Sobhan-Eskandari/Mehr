@@ -1,0 +1,68 @@
+@import url(makeUser.css);
+****----------
+   checkBox
+-----------****/
+
+label.with-square-checkbox {
+    cursor: pointer;
+}
+label.with-square-checkbox span {
+    line-height: 24px;
+}
+label.with-square-checkbox span::before {
+    margin-right: 4px;
+    padding-left: 1px;
+    width: 21px;
+    height: 21px;
+    border: 2px solid grey;
+    display: inline-block;
+    line-height: 15px;
+    content: '';
+    float: left;
+}
+label.with-square-checkbox input[type="checkbox"] {
+    display: none;
+}
+label.with-square-checkbox input[type="checkbox"]:checked + span::before {
+    font-family: 'Glyphicons Halflings';
+    content: '\e013';
+    color: gray;
+}
+main {
+    width: 300px;
+    margin: 8px auto;
+}
+li {
+    list-style-type: none;
+}
+
+@media(max-width:576px){
+    .with-square-checkbox{
+        font-size: 8px;
+    }
+    label.with-square-checkbox span::before{
+        width: 13px;
+        height: 13px;
+    }
+}
+@media(min-width:577px){
+    .with-square-checkbox{
+        font-size: 10px;
+    }
+}
+@media(min-width:768px){
+    .with-square-checkbox{
+        font-size: 13px;
+    } 
+}
+@media(min-width:992px){
+    .with-square-checkbox{
+        font-size: 14px;
+    } 
+}
+@media(min-width:1200px){
+    .with-square-checkbox{
+        font-size: 15px;
+    } 
+}
+

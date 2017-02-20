@@ -1,0 +1,53 @@
+/*******
+sideBar
+********/
+
+.admin_sidebar{
+    background-color: #605ca8;
+    height: 150vh;
+    padding-right: 0;
+    padding-left: 0;
+    margin-top:0;
+    width: 13%;
+    text-align: center;
+}
+.admin_side_title.left_space{
+    padding-left: 0;
+    margin-right: -5.4%;
+}
+.admin_side_title{
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    padding-top: 14.1px;
+    padding-bottom: 14.1px;
+    font-weight: 200;
+    padding-right: 10%;
+    padding-left: 30%;
+}
+.set_fa{
+    margin-right: 15%;
+}
+.zhenic_title{
+    font-size: 30px;
+    font-weight: bold;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding-top: 29px;
+    padding-bottom: 29px;
+    font-weight: 200;
+}
+h5.zhenic_title,h5.admin_side_title{
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+@media (min-width: 0px) {
+    .admin_sidebar {
+        float: right;
+        width: 16.65%;
+    }
+}
+.menu_shadow{
+    box-shadow: 0 0 6px gray;
+}

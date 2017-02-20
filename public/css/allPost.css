@@ -1,0 +1,37 @@
+@import url(fontiran.css);
+body{
+    height: 100%;
+    overflow-x: hidden;
+    font-family: IRANSans !important;
+    font-weight: 300;
+    direction: rtl;
+    margin: 0;
+}
+html{
+    overflow-x: hidden;
+}
+.subject_part{
+    border: 1px solid red;
+    height: 200px;
+    padding-right: 13%;
+    padding-left: 9%;
+}
+.border{
+    border: 1px solid red;
+    padding-right: 10%;
+}
+.boxing_subject{
+    border: 2px solid blue;
+}
+.btn.dropdown-toggle{
+  border-radius: 0;
+    padding-right: 40%;
+    padding-left: 40%;
+    font-size: 18px;
+}
+.caret{
+    font-size: 20px;
+}
+h4{
+  margin-right: -12%; 
+}

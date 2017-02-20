@@ -1,0 +1,98 @@
+@import url(fontiran.css);
+@import url( homePage.css);
+body{
+    height: 100%;
+    overflow-x: hidden;
+    font-family: IRANSans !important;
+    font-weight: 300;
+    direction: rtl;
+    margin: 0;
+}
+html{
+    overflow-x: hidden;
+}
+.news_box{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    box-shadow: 0 0 6px darkgrey;
+    height: 100%;
+}
+.container-fluid-news{
+    padding-top: 3%;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+.text_news{
+    font-weight: 400;
+    min-height: 90px;
+    line-height: normal;
+}
+.date_btn_row{
+    padding-bottom: 2%;
+}
+.continue_btn{
+    width: 50%;
+    padding-top: 2%;
+    padding-bottom: 1.8%;
+    border-radius: 25px;
+    margin-bottom: 5%;
+    background-color: #605ca8;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 0 3px black;
+}
+.date_news{
+    color: #605ca8;
+    font-weight: 500;
+}
+a.link_a{
+    color: white;
+    text-decoration: none;
+}
+/*------------*/
+/***----------------------
+   button & pagination
+-----------------------***/
+
+.last_see_btn{
+    width: 42.5%;
+    font-size: 18px;
+    padding-top: 1.7%;
+    padding-bottom: 1.7%;
+    border-radius: 0;
+    color: white;
+    background-color: #a85c5c;
+}
+.box_pagination{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+/*****--------
+  pagination
+----------*****/
+
+.pagination>li:first-child>a, .pagination>li:first-child>span,.pagination>li:last-child>a, .pagination>li:last-child>span{
+    border-radius: 0;
+}
+.activate_pag.active{
+    background-color: #0198d4;
+}
+.pagination>li>a{
+    font-size: 21px;
+    font-weight: 500;
+    color: #a85c5c;
+}
+.pagination>li.activate_pag>a:active{
+    background-color: #a85c5c;
+    color: white;
+}
+.pagination{
+    width: 100%;
+    margin-top: -0.4%;
+    margin-right: -45%;
+}
+

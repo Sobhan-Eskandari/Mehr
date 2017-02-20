@@ -1,0 +1,18 @@
+@import url(fontiran.css);
+@import url(homepage_style.css);
+@import url(homePage.css);
+body{
+    height: 100%;
+    overflow-x: hidden;
+    font-family: IRANSans !important;
+    font-weight: 300;
+    direction: rtl;
+    margin: 0;
+}
+html{
+    overflow-x: hidden;
+}
+#faq_container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}

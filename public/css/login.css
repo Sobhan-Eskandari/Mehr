@@ -1,0 +1,489 @@
+@import url(fontiran.css);
+body{
+    height: 100%;
+    overflow-x: hidden;
+    font-family: IRANSans !important;
+    font-weight: 300;
+    direction: rtl;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+html{
+    overflow-x: hidden;
+}
+/***-------------------
+   header(beginning)
+--------------------***/
+/***---------------
+     navBar item
+----------------***/
+
+.navbar-nav>li.main_navbar>a{
+    padding-right: 30px;
+    padding-left: 30px;
+    text-align: center;
+}
+.img_nav{
+    width: 130px;
+    height: 110px;
+    margin-top: -14%;
+}
+.nav.navbar-nav.navbar-right{
+    margin-top: 2%;
+}
+@media(max-width: 770px){
+    .img_nav{
+        width: 70px;
+        height: 70px;
+        margin-top: -35%;
+    }
+}
+.navbar.navbar-inverse{  
+    border: 0;
+    box-shadow: 0 0 5px gray; 
+}
+.navbar-inverse .navbar-collapse{
+    background-color: #252525;
+}
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
+    color: white;
+}
+.navbar-brand{
+    background-color: #f4f4f4;
+    padding-bottom: 87px;
+}
+@media(max-width: 760px){
+    .navbar-brand{
+        padding-bottom: 0;
+    }
+}
+.navbar-brand:hover{
+    color: #f4f4f4;
+}
+.navbar-brand:hover{
+    background-color: #f4f4f4;
+}
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover{
+    background-color: #f4f4f4;
+}
+.navbar-toggle{
+    background-color: #252525; 
+}
+.navbar-inverse .navbar-nav>li.enter_btn>a{
+
+    background-color: #a85c5c;
+    color: white;
+}
+.navbar-inverse .navbar-nav>li.enter_btn>a{
+    font-size: 26px;
+    color: black;
+    width: 145px;
+    text-align: center;
+    margin-top: -27px;
+    margin-right: -27%;
+    padding-bottom: 42px;
+    color: white;
+    height: 100%;
+    padding-right: 21.5%;
+}
+.navbar-nav>li.main_navbar>a{
+    color: white;
+    text-align: center;
+    margin-top: 2.5%;
+}
+.navbar-nav>li.main_navbar>a.active{
+   color: #605ca8;
+}
+
+
+/***----------------------
+    responsive menu item
+------------------------***/
+
+@media (max-width: 555px) {
+    .navbar-nav>li.main_navbar>a{
+        font-size: 15px;
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+}
+@media (min-width: 544px) {
+    .navbar-nav>li.main_navbar>a{
+        font-size: 15px;
+        padding-right: 8px;
+        padding-left: 8px;
+        text-align: center;
+    }
+    .navbar-inverse .navbar-nav>li.enter_btn>a{
+        padding-top: 50px;
+    }
+}
+@media (min-width: 768px) { 
+    .navbar-nav>li.main_navbar>a{
+        font-size: 15px;
+        padding-right: 8px;
+        padding-left: 8px;
+        text-align: center;
+    }
+    .navbar-inverse .navbar-    nav>li.enter_btn>a{
+        padding-top: 48px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-nav>li.main_navbar>a{
+        font-size: 18px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .navbar-inverse .navbar-nav>li.enter_btn>a{
+        padding-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar-nav>li.main_navbar>a{
+        font-size: 20px;
+        padding-right: 20px;
+        padding-left: 50px;
+    }
+    .navbar-inverse .navbar-nav>li.enter_btn>a{
+        padding-top: 41px;
+    }
+}
+
+/****---------------
+   search form
+-----------------***/
+
+#panel {
+    padding: 5px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border: solid 1px white;
+    padding-right: 40%;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+    height: 108px;
+}
+.input-group-addon{
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #171717;
+}
+.input-group{
+    width: 96%;
+    margin-right: 6%;
+    margin-top: -1.3%;
+}
+.search_btn_nav{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-top: -15%;
+    color: white;
+    background-color: #171717;
+}
+.search_btn_nav:hover,.search_btn_nav:focus{
+    color: white;
+}
+#inputSearchNav{
+    background-color: transparent;
+    border: 2px solid transparent;
+    font-size: 17px;
+    border-top: 4px solid transparent;
+    border-bottom: 1px solid black;
+}
+input[type="text"].inputSearchNav::-webkit-input-placeholder {
+    color: #171717;
+}
+input[type="text"].inputSearchNav::-moz-placeholder {
+    color: #171717;
+}
+input[type="text"]:focus,
+.inputSearchNav:focus {   
+    border-color: transparent;
+    box-shadow: 0 1px 1px transparent;
+    outline: 0 none;
+}
+
+/***---------------------
+   responsive search form
+----------------------***/
+
+@media (max-width: 755px){
+    .search_btn_nav{
+        font-size: 10px;
+        width: 45px;
+        height: 45px;
+    }
+    .navbar-inverse .navbar-nav>li.enter_btn>a{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 23px;
+        margin-right: -1%;
+        text-align: center;
+        margin-top: 5%;
+    }
+    input[type="text"].inputSearchNav::-webkit-input-placeholder {
+        color: #171717;
+        font-size: 10px;
+    }
+    input[type="text"].inputSearchNav::-moz-placeholder {
+        color: #171717;
+        font-size: 10px;
+    }
+}
+
+/***------------
+ header(end)
+-------------***/
+
+.edges{
+    border: 3px solid #605ca8;
+    box-shadow: 0 0 4px #605ca8;
+    background-color: white;
+    padding-bottom: 5%;
+    margin-top: 10%;
+}
+.boxing{
+    padding-right: 24%;
+    padding-left: 24%;
+    padding-top: 8%;
+}
+.account_title{
+    text-align: center;
+    padding-top: 3%;
+    color: #605ca8;
+}
+.input_boxing{
+    padding-right: 15%;
+    padding-left: 15%;
+}
+#inputName{
+    border-radius: 0;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+#inputPass{
+    border-radius: 0;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+input[type="text"].inputName::-webkit-input-placeholder {
+    color: #252525;
+    font-size: 1.3vw;
+    text-align: right;
+    margin-left: -2%;
+}
+input[type="text"].inputName::-moz-placeholder {
+    color: #252525;
+    font-size: 1.3vw;
+    text-align: right;
+    margin-right: 5%;
+}
+input[type="password"].inputPass::-webkit-input-placeholder {
+    color: #252525;
+    font-size: 1.3vw;
+    text-align: right;
+}
+input[type="password"].inputPass::-moz-placeholder {
+    color: #252525;
+    font-size: 1.3vw;
+    text-align: right;
+}
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  {
+    padding-left:  30px; 
+}
+.right-addon input {
+    padding-right: 30px; 
+}
+.glyphicon{
+    font-size: 1.5vw;
+    color: #252525;
+    margin-top: 1.4%;
+    padding-left: 5%;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus{   
+    border-color: rgba(96,92,168, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(96,92,168, 0.6);
+    outline: 0 none;
+}
+label.with-square-checkbox {
+    cursor: pointer;
+}
+label.with-square-checkbox span {
+    line-height: 24px;
+}
+label.with-square-checkbox span::before {
+    margin-right: 4px;
+    padding-left: 1px;
+    width: 21px;
+    height: 21px;
+    border: 2px solid #605ca8;
+    display: inline-block;
+    line-height: 15px;
+    content: '';
+    float: left;
+}
+label.with-square-checkbox input[type="checkbox"] {
+    display: none;
+}
+label.with-square-checkbox input[type="checkbox"]:checked + span::before {
+    font-family: 'Glyphicons Halflings';
+    content: '\e013';
+    color: #605ca8;
+}
+main {
+    width: 300px;
+    margin: 8px auto;
+}
+li.check_part {
+    list-style-type: none;
+}
+.check_title{
+    color: #605ca8;
+    text-align: center;
+}
+.boxing_btn_login{
+    padding-right: 35%;
+    padding-left: 35%;
+}
+.login_button{
+    font-size: 1.3vw;
+    width: 100%;
+    color: white;
+    background-color: #605ca8;
+    border-radius: 0;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    margin-top: 10%;
+    box-shadow: 0 0 4px gray;
+}
+@media(max-width:600px){
+  .login_button{
+      font-size: 15px;  
+    }
+    input[type="text"].inputName::-webkit-input-placeholder {
+   font-size: 11px;
+}
+input[type="text"].inputName::-moz-placeholder {
+    font-size: 11px;
+}
+input[type="password"].inputPass::-webkit-input-placeholder {
+    font-size: 11px;
+}
+input[type="password"].inputPass::-moz-placeholder {
+   font-size: 11px;
+}
+    .check_boxing{
+    padding-right: 36%;
+    padding-left: 18%;
+}
+}
+@media(max-width:767px){
+    .account_title{
+        font-size: 15px;
+    }
+    .check_title{
+        font-size: 10px;
+    }
+    .boxing{
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 8%;
+}
+    .glyphicon{
+        margin-top: 3.5%;
+    }
+    .check_boxing{
+    padding-right: 38%;
+    padding-left: 18%;
+}
+}
+@media(min-width:768px){
+    .account_title{
+        font-size: 18px;
+    } 
+    .check_title{
+        font-size: 13px;
+    }
+    .boxing{
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 8%;
+}
+    .check_boxing{
+    padding-right: 36%;
+    padding-left: 20%;
+}
+}
+@media(min-width:992px){
+    .account_title{
+        font-size: 21px;
+    } 
+    .check_title{
+        font-size: 15px;
+    }
+    .boxing{
+    padding-right: 14%;
+    padding-left: 14%;
+    padding-top: 8%;
+}
+    .check_boxing{
+    padding-right: 35%;
+    padding-left: 25%;
+}
+}
+@media(min-width:1200px){
+    .account_title{
+        font-size: 22px;
+    } 
+    .check_title{
+        font-size: 16px;
+    }
+    .boxing{
+    padding-right: 24%;
+    padding-left: 24%;
+    padding-top: 8%;
+}
+    .check_boxing{
+    padding-right: 32%;
+    padding-left: 32%;
+}
+}
+input#inputName.form-control.inputName{
+   padding-right: 10.5%; 
+}
+input#inputPass.form-control.inputPass{
+   padding-right: 10.5%; 
+}
+
+
+
+

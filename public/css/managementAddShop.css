@@ -1,0 +1,334 @@
+@import url(fontiran.css);
+body{
+    height: 100%;
+    overflow-x: hidden;
+    font-family: IRANSans !important;
+    font-weight: 300;
+    direction: rtl;
+    margin: 0;
+}
+html{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/*******
+sideBar
+********/
+
+.admin_sidebar{
+    background-color: #605ca8;
+    height: 120vh;
+    padding-right: 0;
+    padding-left: 0;
+    margin-top:0;
+    width: 13%;
+    text-align: center;
+}
+.admin_side_title.left_space{
+    padding-left: 0;
+    margin-right: -5.4%;
+}
+.admin_side_title{
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 200;
+    padding-right: 10%;
+    padding-left: 30%;
+}
+.set_fa{
+margin-right: 15%;
+}
+.zhenic_title{
+    font-size: 30px;
+    font-weight: bold;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding-top: 47px;
+    padding-bottom: 47px;
+    font-weight: 200;
+}
+h5.zhenic_title,h5.admin_side_title{
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+@media (min-width: 0px) {
+    .admin_sidebar {
+        float: right;
+        width: 16.65%;
+    }
+}
+.menu_shadow{
+    box-shadow: 0 0 6px gray;
+}
+/**********
+spline gray
+***********/
+
+.spline{
+    height: 50px;
+    background-color: #f4f4f4;
+     margin-top: 0.2%;
+}
+
+/*******
+menu bar
+********/
+
+.col-xs-4.pull-right.home_top{
+    margin-right: 4%;
+}
+.col-xs-4.pull-left.exit_up{
+    margin-left: -21%;
+}
+.zhenic_menubar,.exit_menubar{
+    color: black;
+}
+
+/****************
+activate menu bar
+*****************/
+
+.admin_side_title.active{
+    background-color: #0198d4;
+    opacity: 0.5;
+}
+
+/******************
+responsive side bar
+*******************/
+
+@media(max-width:750px){
+    .col-xs-4.pull-left.exit_up{
+        margin-left: 6%;
+    }
+}
+@media(max-width:576px){
+    .admin_side_title{
+        font-size: 11px;
+    }
+    .zhenic_title{
+        font-size: 22px;
+    }
+    .input_label{
+        font-size: 14px;
+    }
+    .send_btn{
+        font-size: 16px;
+    }
+    input[type="text"].inputSerial::-webkit-input-placeholder {
+        font-size: 7px;
+    }
+    input[type="text"].inputSerial::-moz-placeholder {
+        font-size: 7px;
+    }
+    .button_box{
+        padding-top: 30%;
+    }
+    .icone_img{
+    width: 35px;
+    height: 35px;
+}
+}
+@media(min-width:577px){
+    .admin_side_title{
+        font-size: 12px;
+    }
+    .zhenic_title{
+        font-size: 24px;
+    }
+    .input_label{
+        font-size: 15px;
+    }
+    .send_btn{
+        font-size: 18px;
+    }
+    input[type="text"].inputSerial::-webkit-input-placeholder {
+        font-size: 11px;
+    }
+    input[type="text"].inputSerial::-moz-placeholder {
+        font-size: 11px;
+    }
+    .icone_img{
+    width: 40px;
+    height: 40px;
+}
+}
+@media(min-width:768px){
+    .admin_side_title{
+        font-size: 13px;
+    }
+    .zhenic_title{
+        font-size: 26px;
+    }
+    .input_label{
+        font-size: 16px;
+    }
+    .send_btn{
+        font-size: 20px;
+    }
+    input[type="text"].inputSerial::-webkit-input-placeholder {
+        font-size: 12px;
+    }
+    input[type="text"].inputSerial::-moz-placeholder {
+        font-size: 12px;
+    }
+    .icone_img{
+    width: 50px;
+    height: 50px;
+}
+}
+@media(min-width:992px){
+    .admin_side_title{
+        font-size: 14px;
+    }
+    .zhenic_title{
+        font-size: 28px;
+    }
+    .input_label{
+        font-size: 18px;
+    }
+    .send_btn{
+        font-size: 22px;
+    }
+    input[type="text"].inputSerial::-webkit-input-placeholder {
+        font-size: 13px;
+    }
+    input[type="text"].inputSerial::-moz-placeholder {
+        font-size: 13px;
+    }
+    .icone_img{
+    width: 60px;
+    height: 60px;
+}
+}
+@media(min-width:1200px){
+    .admin_side_title{
+        font-size: 15px;
+    }
+    .zhenic_title{
+        font-size: 30px;
+    }
+    .input_label{
+        font-size: 20px;
+    }
+    .send_btn{
+        font-size: 24px;
+    }
+    input[type="text"].inputSerial::-webkit-input-placeholder {
+        font-size: 15px;
+    }
+    input[type="text"].inputSerial::-moz-placeholder {
+        font-size: 15px;
+    }
+    .icone_img{
+    width: 70px;
+    height: 70px;
+}
+}
+/****-----
+scroll bar
+------****/
+.height_vh{
+    height: 100vh;
+}
+.scrollbar{
+   overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    margin-right: -1%;
+}
+.scroll_padding{
+    padding-left: 0;
+    margin-left: -3px;
+    padding-right: 0;
+}
+    /****
+    input
+    *****/
+
+    .input_box{
+        margin-top: 4%;
+    }
+    .input_label{
+        padding-bottom: 2%;
+    }
+    .inputSerial{
+        height: auto;
+        padding-top: 2%;
+        padding-bottom: 2%; 
+        border-radius: 0;
+        background-color: #f4f4f4;
+    }
+    input[type="text"]:focus,
+    .uneditable-input:focus {   
+        border-color: rgba(96,92,168,0.8);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(96,92,168, 0.6);
+        outline: 0 none;
+    }
+
+
+    /**********
+    button send
+    ***********/
+
+    .send_btn{
+        padding-right: 8%;
+        padding-left: 8%;
+        border-radius: 0;
+        background-color: #0198d4;
+        box-shadow: 0 0 4px gray; 
+        margin-left: 22.3%;
+        color: white;
+        width: 50%;
+        padding-top: 4%;
+        margin-top: 0.88%;
+    }
+    .input_box_padding{
+        padding-right: 5%;
+    }
+    .button_box{
+        padding-top: 4.1%;
+    }
+    .menu_shadow{
+        box-shadow: 0 0 5px gray; 
+    }
+.table-bordered>tbody>tr>td.table_other{
+    text-align: center;
+    padding-top: 6.5%;
+    padding-bottom: 1.5%;
+    font-size: 1.2vw;
+    font-weight: 500;
+    background-color: #f4f4f4;
+}
+.table-bordered>tbody>tr>td.table_img{
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    font-size: 1.2vw;
+    font-weight: 500;
+    background-color: #f4f4f4;
+}
+.table.table-bordered{
+    margin-top: 8%;
+}
+.table_boxing{
+    padding-right: 3.44%;
+    padding-left: 5%; 
+}
+@media(max-width:600px){
+    .send_btn{
+        font-size: 14px;
+        margin-top: 15%;
+    }
+    
+}
+@media(max-width:750px){
+    .table-bordered>tbody>tr>td{
+        font-size: 10px;
+    }
+}

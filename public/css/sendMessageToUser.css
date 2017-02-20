@@ -1,0 +1,36 @@
+@import url(makeUser.css);
+.padding_right{
+    padding-left: 3.4%;
+    padding-top: 4%;
+}
+/***-------------
+       input
+--------------***/
+
+#sendMessageInput{
+    height: 50px;
+    background-color: #eeeeee;
+    border-radius: 0;
+}
+#inputCommentsMessage{
+    border-radius: 0;
+    padding-top: 1.5%;
+    padding-bottom: 23%;
+    background-color: #eeeeee;
+}
+textarea::-webkit-input-placeholder {
+    font-size: 17px !important;
+}
+textarea:-moz-placeholder { 
+    /* Firefox 18- */
+    font-size: 17px !important;
+}
+
+textarea::-moz-placeholder { 
+    /* Firefox 19+ */
+    font-size: 17px !important;
+}
+
+textarea:-ms-input-placeholder {  
+    font-size: 17px !important;
+}

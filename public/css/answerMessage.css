@@ -1,0 +1,440 @@
+@import url(fontiran.css);
+body{
+    height: 100%;
+    overflow-x: hidden;
+    font-family: IRANSans !important;
+    font-weight: 300;
+    direction: rtl;
+    margin: 0;
+
+}
+html{
+    overflow-x: hidden; 
+    overflow-y: hidden;
+}
+
+/*******
+sideBar
+********/
+
+.admin_sidebar{
+    background-color: #605ca8;
+    height: 120vh;
+    padding-right: 0;
+    padding-left: 0;
+    margin-top:0;
+    width: 13%;
+    text-align: center;
+}
+.admin_side_title.left_space{
+    padding-left: 0;
+    margin-right: -5.4%;
+}
+.admin_side_title{
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 200;
+    padding-right: 10%;
+    padding-left: 30%;
+}
+.set_fa{
+    margin-right: 15%;
+}
+.zhenic_title{
+    font-size: 30px;
+    font-weight: bold;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding-top: 47px;
+    padding-bottom: 47px;
+    font-weight: 200;
+}
+h5.zhenic_title,h5.admin_side_title{
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+@media (min-width: 0px) {
+    .admin_sidebar {
+        float: right;
+        width: 16.65%;
+    }
+}
+.menu_shadow{
+    box-shadow: 0 0 6px gray;
+}
+
+/**********
+spline gray
+***********/
+
+.spline{
+    height: 50px;
+    background-color: #f4f4f4;
+    margin-top: 0.2%;
+}
+
+/*******
+menu bar
+********/
+
+.col-xs-4.pull-right.home_top{
+    margin-right: 4%;
+}
+.col-xs-4.pull-left.exit_up{
+    margin-left: -21%;
+}
+.zhenic_menubar,.exit_menubar{
+    color: black;
+}
+
+/****************
+activate menu bar
+*****************/
+
+.admin_side_title.active{
+    background-color: #0198d4;
+    opacity: 0.5;
+}
+
+/******************
+responsive side bar
+*******************/
+
+@media(max-width:750px){
+    .col-xs-4.pull-left.exit_up{
+        margin-left: 6%;
+    }
+}
+@media(max-width:576px){
+    .admin_side_title{
+        font-size: 11px;
+    }
+    .zhenic_title{
+        font-size: 22px;
+    }
+    .input_label{
+        font-size: 14px;
+    }
+    .send_btn{
+        font-size: 16px;
+    }
+    input[type="text"].inputSerial::-webkit-input-placeholder {
+        font-size: 7px;
+    }
+    input[type="text"].inputSerial::-moz-placeholder {
+        font-size: 7px;
+    }
+    .button_box{
+        padding-top: 30%;
+    }
+}
+@media(min-width:577px){
+    .admin_side_title{
+        font-size: 12px;
+    }
+    .zhenic_title{
+        font-size: 24px;
+    }
+    .input_label{
+        font-size: 15px;
+    }
+    .send_btn{
+        font-size: 18px;
+    }
+    input[type="text"].inputSerial::-webkit-input-placeholder {
+        font-size: 11px;
+    }
+    input[type="text"].inputSerial::-moz-placeholder {
+        font-size: 11px;
+    }
+}
+@media(min-width:768px){
+    .admin_side_title{
+        font-size: 13px;
+    }
+    .zhenic_title{
+        font-size: 26px;
+    }
+    .input_label{
+        font-size: 16px;
+    }
+    .send_btn{
+        font-size: 20px;
+    }
+    input[type="text"].inputSerial::-webkit-input-placeholder {
+        font-size: 12px;
+    }
+    input[type="text"].inputSerial::-moz-placeholder {
+        font-size: 12px;
+    }
+}
+@media(min-width:992px){
+    .admin_side_title{
+        font-size: 14px;
+    }
+    .zhenic_title{
+        font-size: 28px;
+    }
+    .input_label{
+        font-size: 18px;
+    }
+    .send_btn{
+        font-size: 22px;
+    }
+    input[type="text"].inputSerial::-webkit-input-placeholder {
+        font-size: 13px;
+    }
+    input[type="text"].inputSerial::-moz-placeholder {
+        font-size: 13px;
+    }
+}
+@media(min-width:1200px){
+    .admin_side_title{
+        font-size: 15px;
+    }
+    .zhenic_title{
+        font-size: 30px;
+    }
+    .input_label{
+        font-size: 20px;
+    }
+    .send_btn{
+        font-size: 24px;
+    }
+    input[type="text"].inputSerial::-webkit-input-placeholder {
+        font-size: 15px;
+    }
+    input[type="text"].inputSerial::-moz-placeholder {
+        font-size: 15px;
+    }
+}
+
+/****-------------
+    scroll bar
+--------------****/
+.height_vh{
+   height: 100vh; 
+}
+.scrollbar{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    margin-right: -1%;
+}
+
+.col-xs-10.scroll_padding{
+    padding-left: 0;
+    margin-left: -3px;
+    padding-right: 0;
+}
+
+.white_box_padding{
+    padding-right: 4%;
+    padding-left: 4%;
+}
+
+/******-----------------
+comment and answer panel
+-----------------*******/
+
+.first_panel{
+    margin-top: 70px;
+    border-radius: 0;
+    border: 1 px solid gray;
+}
+.panel-default>.first_header_box{
+    background-color: #252525;
+    border: 1 px solid gray;
+    color: #7c7c7c;
+
+}
+.panel-default>.panel-body{
+    background-color: #f4f4f4;
+}
+.panel-body p{
+    font-weight: 500;
+    line-height: normal;
+}
+.second_panel{
+    border-radius: 0;
+    border: 1 px solid #7c7c7c;
+    margin-top: 60px;
+}
+.textOfAnswer{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.first_panelBody{
+    background-color: white;
+}
+.second_heading{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.panel-default>.second_header_box{
+    background-color: #252525;
+    color: white;
+    border: 1 px solid gray;
+    border-radius: 0;
+}
+.second_answer_head{
+
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+/****----------------
+   input comments
+----------------*****/
+
+#inputComments_answer{
+    border-radius: 0;
+    background-color: #f4f4f4;
+    padding-bottom: 25%;
+}
+textarea::-webkit-input-placeholder {
+    color: dimgrey!important;
+    font-size: 1.25vw !important;
+}
+textarea:-moz-placeholder { 
+    /* Firefox 18- */
+    color: dimgrey !important;
+    font-size: 1.25vw !important;
+}
+
+textarea::-moz-placeholder {  
+    /* Firefox 19+ */
+    color: dimgrey !important; 
+    font-size: 1.25vw !important;
+}
+
+textarea:-ms-input-placeholder {  
+    color: dimgrey !important; 
+    font-size: 1.2vw !important;
+}
+
+/*****-----------
+   last button
+-------------*****/
+
+.answer_send{
+    background-color: #0198d4;;
+    text-align: center;
+    margin-top: 15%;
+    border-radius: 0;
+    color: white;
+    border: 2px solid #0198d4;
+    box-shadow: 0 0 3px #0198d4; 
+    width: 100%;
+    color: white;
+    margin-bottom: 150px;
+}
+.subject_answer{
+    margin-top: -2.7%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 34px;
+    width: 25%;
+    margin-left: 1%;
+}
+
+/****------------
+  search input
+--------------****/
+
+#inpuSubAns{
+    border-radius: 0;
+    font-size: 1vw;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 5%;
+}
+.panel-default {
+    border-color: lightgray;
+}
+.container-fluid{
+    overflow: hidden;
+}
+
+/******-----------------
+   responsive font-size
+-------------------******/
+
+@media(max-width: 543px){
+    .panel-body p{
+        font-size: 12px;
+    }
+    .heading_panel{
+        font-size: 13px;
+    }
+    .second_answer_head{
+        font-size: 9px;
+    }
+    .answer_send{
+        font-size: 8px;
+    }
+}
+@media(min-width: 544px){
+    .panel-body p{
+        font-size: 13px;
+    }
+    .heading_panel{
+        font-size: 14px;
+    }
+    .second_answer_head{
+        font-size: 15px;
+    }
+    .answer_send{
+        font-size: 13px;
+    }
+}
+
+@media(min-width: 768px){
+    .panel-body p{
+        font-size: 14px;
+    }
+    .heading_panel{
+        font-size: 15px;
+    }
+    .second_answer_head{
+        font-size: 16px;
+    }
+    .answer_send{
+        font-size: 14px;
+    }
+}
+
+@media(min-width: 1150px){
+    .panel-body p{
+        font-size: 15px;
+    } 
+    .heading_panel{
+        font-size: 16px;
+    }
+    .second_answer_head{
+        font-size: 17px;
+    }
+    .answer_send{
+        font-size: 15px;
+    }
+}
+
+@media(min-width: 1200px){
+    .panel-body p{
+        font-size: 16px;
+    }
+    .heading_panel{
+        font-size: 17px;
+    }
+    .second_answer_head{
+        font-size: 17px;
+    }
+    .answer_send{
+        font-size: 17px;
+    }
+}
