@@ -69,7 +69,6 @@ class ComposerStaticInitcdb32e9a46449d3ae1e0626e3f30732b
             'Psy\\' => 4,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
-            'PhpParser\\' => 10,
         ),
         'M' => 
         array (
@@ -220,10 +219,6 @@ class ComposerStaticInitcdb32e9a46449d3ae1e0626e3f30732b
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'PhpParser\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
-        ),
         'Morilog\\Jalali\\' => 
         array (
             0 => __DIR__ . '/..' . '/morilog/jalali/src',
@@ -352,6 +347,7 @@ class ComposerStaticInitcdb32e9a46449d3ae1e0626e3f30732b
         'CreateMarketMategoryTabel' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_151050_create_market_mategory_tabel.php',
         'CreateMarketTagTabel' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_150957_create_market_tag_tabel.php',
         'CreateMarketsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_144044_create_markets_table.php',
+        'CreateMarketsTariff2sTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_22_175034_create_markets_tariff2s_table.php',
         'CreateMategortiesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_144107_create_mategorties_table.php',
         'CreateMessagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_144122_create_messages_table.php',
         'CreateNewsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_144130_create_news_table.php',
@@ -362,6 +358,9 @@ class ComposerStaticInitcdb32e9a46449d3ae1e0626e3f30732b
         'CreateRegTypesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_144213_create_reg_types_table.php',
         'CreateSiteInfosTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_144243_create_site_infos_table.php',
         'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_144256_create_tags_table.php',
+        'CreateTariff2TariffTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_224927_create_tariff2_tariff_table.php',
+        'CreateTariff2sTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_20_231347_create_tariff2s_table.php',
+        'CreateTariffsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_20_221156_create_tariffs_table.php',
         'CreateTracksTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_144307_create_tracks_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

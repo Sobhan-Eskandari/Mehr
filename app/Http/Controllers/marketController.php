@@ -180,11 +180,13 @@ class marketController extends Controller
                     $tags[] = $ids;
                 }
             }
-            //dd($tags);
             $market->tags()->sync($tags);
         }
         if($categories = $request->categories){
             $market->categories()->attach($categories);
+        }
+        if($tariffs = $request->tariff){
+            $market->tariff2s()->attach($tariffs);
         }
         if($regType = $request->regType){
             $market->regTypes()->attach($regType);
@@ -397,6 +399,11 @@ class marketController extends Controller
             $market->categories()->sync($categories);
         }else{
             $market->categories()->detach();
+        }
+        if($tariffs = $request->tariff){
+            $market->tariff2s()->sync($tariffs);
+        }else{
+            $market->tariff2s()->detach();
         }
 
 

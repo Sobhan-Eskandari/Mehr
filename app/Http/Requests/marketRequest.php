@@ -38,6 +38,7 @@ class marketRequest extends FormRequest
             'logo'=>'nullable|image',
             'normal_percentage'=>'nullable',
             'marketsCategories'=>'nullable',
+            'tariff'=>'required',
         ];
     }
 

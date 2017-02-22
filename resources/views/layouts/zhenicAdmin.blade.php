@@ -79,6 +79,10 @@
 
             <a href="{{route('systemicCategories.index')}}"><h5 class="admin_side_title left_space @yield('systemic')"><i class="fa fa-th-list set_fa pull-right xs_pr" aria-hidden="true"></i><span class="hidden-xs">دسته بندی سیستمی</span></h5></a>
 
+            <a href="{{route('tariff.index')}}"><h5 class="admin_side_title left_space @yield('tariff')"><i class="fa fa-th-list set_fa pull-right xs_pr" aria-hidden="true"></i><span class="hidden-xs">دسته بندی تعرفه</span></h5></a>
+
+            <a href="{{route('tariffs.index')}}"><h5 class="admin_side_title left_space @yield('tariffs')"><i class="fa fa-th-list set_fa pull-right xs_pr" aria-hidden="true"></i><span class="hidden-xs"> تعرفه</span></h5></a>
+
             <a href="{{route('regTypes.index')}}"><h5 class="admin_side_title @yield('regType')"><i class="fa fa-th-list set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">نوع عضویت</span></h5></a>
 
             <a href="{{route('tags.index')}}"><h5 class="admin_side_title @yield('tags')"><i class="fa fa-tags set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">تگ ها</span></h5></a>

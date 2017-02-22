@@ -95,9 +95,12 @@ Route::group(['middleware' => 'admin'], function (){
     Route::get('/market','marketController@index')->name('markets.index');
     Route::get('/markets','marketController@index')->name('markets.index');
     Route::get('/markets/{id}','marketController@show')->name('show');
-    //////}}}}editMarket
+    //////}}}}editMarketF
     //Route::resource('markets','marketController');
     ////}}}}}}}marketController
+    Route::resource('tariff','tariffController');
+    Route::resource('tariffs','tariff2Controller');
+//    Route::get('/tariff', 'tariffController@index')->name('tariff.index');
 
     //////AdminController
     Route::resource('/settings','AdminController');

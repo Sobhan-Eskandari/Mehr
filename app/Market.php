@@ -65,4 +65,7 @@ class Market extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+    public function tariff2s(){
+        return $this->belongsToMany('App\Tariff2');
+    }
 }

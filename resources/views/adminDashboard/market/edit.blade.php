@@ -314,6 +314,13 @@
                     {!! Form::select('marketsCategories[]', $marketCategories , $market->mategories->pluck('id')->toArray(),['class'=>'selectpicker','multiple','tabindex' =>'1','data-live-search'=>'true']) !!}
 
                 </div>
+                <div class="row">
+                    <label>تعرفه ها</label>
+                </div>
+                <div class="row dropdown">
+                    {!! Form::select('tariff[]', \App\Tariff2::pluck('name','id')->toArray() , $market->tariff2s->pluck('id')->toArray(),['class'=>'selectpicker','multiple',"tabindex"=>"16",'data-live-search'=>'true']) !!}
+
+                </div>
                 <div class="col-md-3 col-md-offset-0 col-xs-5 pull-right">
 
                 </div>
