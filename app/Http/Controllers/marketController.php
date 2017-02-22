@@ -263,9 +263,10 @@ class marketController extends Controller
         $TagName = ltrim($TagName, ",");
         $categoryName = ltrim($categoryName, ",");
         $regName = ltrim($regName, ",");
+        $tariff = implode(',',$market->tariff2s->pluck('name')->toArray());
        // dd($market->photos[0]->address);
         $user = User::findOrFail($market->user_id);
-        return view('adminDashboard.market.show',compact('market','user','mategoryName','TagName','categoryName','regName'));
+        return view('adminDashboard.market.show',compact('market','user','mategoryName','TagName','categoryName','regName','tariff'));
 
     }
 

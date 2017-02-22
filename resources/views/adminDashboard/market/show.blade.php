@@ -262,6 +262,13 @@
                     {!! Form::text('marketsCategories',$mategoryName,['class'=>'form-control inpuColXs4','multiple','tabindex' =>'1','data-live-search'=>'true','readonly']) !!}
 
                 </div>
+                <div class="row">
+                    <label>تعرفه ها</label>
+                </div>
+                <div class="row dropdown">
+                    {!! Form::text('tariff',$tariff,['class'=>'form-control inpuColXs4','multiple','tabindex' =>'1','data-live-search'=>'true','readonly']) !!}
+
+                </div>
                 <div class="col-md-3 col-md-offset-0 col-xs-5 pull-right">
 
                 </div>
