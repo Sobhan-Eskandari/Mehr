@@ -296,7 +296,7 @@
                                                 </div>
 
                                                 <div class="col-xs-6 pull-left btn_upper">
-                                                    {{--<span class="discunt_btn_img"><span class="percent">{{ $market->normal_percentage }}%</span>&nbsp;&nbsp;تخفیف</span>--}}
+                                                    <span class="discunt_btn_img">{{ $market->city }}</span>
                                                 </div>
                                             </div>
                                         </div>

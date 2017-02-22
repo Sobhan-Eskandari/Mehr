@@ -73,6 +73,8 @@
 
             <a href="{{ route('News.DashIndex') }}"><h5 class="admin_side_title @yield('announcement')"><i class="fa fa-bullhorn set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">اخبار</span></h5></a>
 
+            <a href="{{route('FAQ.index')}}"><h5 class="admin_side_title @yield('FAQ')"><i class="fa fa-th-list set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">FAQ</span></h5></a>
+
             <a href="{{ route('settings.index') }}"><h5 class="admin_side_title @yield('settings')"><i class="fa fa-cogs set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">تنظيمات</span></h5></a>
 
             <a href="{{route('marketCategories.index')}}"><h5 class="admin_side_title left_space @yield('categories')"><i class="fa fa-th-list set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">دسته بندی فروشگاه</span></h5></a>

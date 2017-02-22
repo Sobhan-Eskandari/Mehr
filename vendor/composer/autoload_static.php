@@ -348,6 +348,7 @@ class ComposerStaticInitcdb32e9a46449d3ae1e0626e3f30732b
         'CreateAdminsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_111659_create_admins_table.php',
         'CreateCategorablesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_143950_create_categorables_table.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_144005_create_categories_table.php',
+        'CreateFAQsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_22_155445_create_f_a_qs_table.php',
         'CreateLogosTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_144015_create_logos_table.php',
         'CreateMarketMategoryTabel' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_151050_create_market_mategory_tabel.php',
         'CreateMarketTagTabel' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_150957_create_market_tag_tabel.php',

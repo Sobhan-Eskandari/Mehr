@@ -19,7 +19,7 @@ class CreateSiteInfosTable extends Migration
             $table->char('contact_tel', 11)->nullable();
             $table->string('telegram')->nullable();
             $table->string('instagram')->nullable();
-            $table->text('faq')->nullable();
+            $table->text('about')->nullable();
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });

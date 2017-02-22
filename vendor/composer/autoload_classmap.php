@@ -9,6 +9,7 @@ return array(
     'CreateAdminsTable' => $baseDir . '/database/migrations/2016_12_19_111659_create_admins_table.php',
     'CreateCategorablesTable' => $baseDir . '/database/migrations/2016_12_19_143950_create_categorables_table.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2016_12_19_144005_create_categories_table.php',
+    'CreateFAQsTable' => $baseDir . '/database/migrations/2017_02_22_155445_create_f_a_qs_table.php',
     'CreateLogosTable' => $baseDir . '/database/migrations/2016_12_19_144015_create_logos_table.php',
     'CreateMarketMategoryTabel' => $baseDir . '/database/migrations/2016_12_19_151050_create_market_mategory_tabel.php',
     'CreateMarketTagTabel' => $baseDir . '/database/migrations/2016_12_19_150957_create_market_tag_tabel.php',

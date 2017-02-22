@@ -11,7 +11,7 @@ class SiteInfo extends Model
         'contact_tel',
         'telegram',
         'instagram',
-        'faq',
+        'about',
     ];
 
 
