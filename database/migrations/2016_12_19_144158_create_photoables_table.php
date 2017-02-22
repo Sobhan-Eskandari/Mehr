@@ -15,9 +15,9 @@ class CreatePhotoablesTable extends Migration
     {
         Schema::create('photoables', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('photo_id');
-            $table->bigInteger('photoable_id');
-            $table->string('photoable_type');
+            $table->bigInteger('photo_id')->nullable();
+            $table->bigInteger('photoable_id')->nullable();
+            $table->string('photoable_type')->nullable();
         });
     }
 

@@ -218,8 +218,6 @@ class AdminController extends Controller
          */
         if($file = $request->file('photo_1')){
             if(!empty($setPhotoId[0])){
-//                // delete the actual file
-//                $siteInfo->photos->delete();
                 Photoable::where('photoable_id', '=', 1)
                     ->where('photo_id', '=', $setPhotoId[0])->delete();
                 Photo::whereId($setPhotoId[0])->delete();

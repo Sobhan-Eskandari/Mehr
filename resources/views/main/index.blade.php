@@ -267,7 +267,7 @@
         <!--shopping title-->
         <div class="container">
             <div class="row">
-                <h2 class="best_title">فروشگاه های برتر ما</h2>
+                <h2 class="best_title">فروشگاه های ما</h2>
             </div>
         </div>
 
@@ -276,8 +276,8 @@
         <div class="container-fluid space_4_card">
             <div class="row ">
                 <!--first card-->
-                @foreach($specialMarkets as $market)
-                    @if($market->market_type == 1)
+                @foreach($normalMarkets as $market)
+                    @if($market->market_type == 0)
                         <div class="col-md-3 col-xs-6 pull-right thumbnail padding">
                             <div class="opac_layer">
                                 @if(count($market->photos) >= 1)
@@ -296,8 +296,7 @@
                                                 </div>
 
                                                 <div class="col-xs-6 pull-left btn_upper">
-                                                    <span class="discunt_btn_img"><span class="percent">{{ $market->normal_percentage }}%</span>&nbsp;&nbsp;تخفیف</span>
-
+                                                    {{--<span class="discunt_btn_img"><span class="percent">{{ $market->normal_percentage }}%</span>&nbsp;&nbsp;تخفیف</span>--}}
                                                 </div>
                                             </div>
                                         </div>
@@ -316,9 +315,7 @@
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-3 col-xs-6 col-xs-offset-1">
 
-                    <a href="{{ route('BestMarkets') }}"><button class="btn first_shopping_btn">
-                            فروشگاه های برتر
-                        </button></a>
+                    <a href="{{ route('stores.index') }}"><button class="btn first_shopping_btn">تمام فروشگاه ها</button></a>
 
                 </div>
             </div>
@@ -326,70 +323,55 @@
 
         <br><br><br>
     </div>
-    <!--BestShopping(end)-->
-    <!--ZhenicShopping(start)-->
-    <div class="container service_box">
-        <div class="row">
-            <div class="col-xs-4 top">
-                <hr class="hr_service">
-            </div>
-            <div class="col-xs-4">
-                <h1 class="service_title">فروشگاه های ژنیک</h1>
-            </div>
-            <div class="col-xs-4 top">
-                <hr class="hr_service">
-            </div>
-        </div>
-    </div>
 
-    <div class="container-fluid">
-        <div class="row">
+    {{--<div class="container-fluid">--}}
+        {{--<div class="row">--}}
 
-            @foreach($normalMarkets as $market)
-                @if($market->market_type == 0)
-                <div class="box actionImg3 col-xs-6">
-                    @if(count($market->photos) >= 1)
-                        <img src="marketsPhotos/{{ $market->photos[0]['address'] }}" class="img-fluid radious_img" alt="Responsive image">
-                    @else
-                        <img src="https://placehold.it/200x200" class="img-fluid radious_img" alt="Responsive image">
-                    @endif
-                    <div class="hover">
-                        <div class="sub_tit">
-                            <div class="row">
-                                <h1 class="title_nagm">{{ $market->market_name }}</h1>
-                            </div>
-                            <div class="row">
-                                <h3 class="percent_discount">{{ $market->normal_percentage }}% تخفیف</h3>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8 col-xs-offset-2">
-                                    <a href="{{ route('stores.show', $market->id) }}"><button class="btn vision">مشاهده جزییات</button></a>
-                                </div>
-                            </div>
-                        </div>
+            {{--@foreach($normalMarkets as $market)--}}
+                {{--@if($market->market_type == 0)--}}
+                {{--<div class="box actionImg3 col-xs-6">--}}
+                    {{--@if(count($market->photos) >= 1)--}}
+                        {{--<img src="marketsPhotos/{{ $market->photos[0]['address'] }}" class="img-fluid radious_img" alt="Responsive image">--}}
+                    {{--@else--}}
+                        {{--<img src="https://placehold.it/200x200" class="img-fluid radious_img" alt="Responsive image">--}}
+                    {{--@endif--}}
+                    {{--<div class="hover">--}}
+                        {{--<div class="sub_tit">--}}
+                            {{--<div class="row">--}}
+                                {{--<h1 class="title_nagm">{{ $market->market_name }}</h1>--}}
+                            {{--</div>--}}
+                            {{--<div class="row">--}}
+                                {{--<h3 class="percent_discount">{{ $market->normal_percentage }}% تخفیف</h3>--}}
+                            {{--</div>--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col-xs-8 col-xs-offset-2">--}}
+                                    {{--<a href="{{ route('stores.show', $market->id) }}"><button class="btn vision">مشاهده جزییات</button></a>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
-                    </div>
-                </div>
-            @endif
-        @endforeach
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--@endif--}}
+        {{--@endforeach--}}
 
-        </div>
-    </div>
+        {{--</div>--}}
+    {{--</div>--}}
 
-    <br>
+    {{--<br>--}}
 
-    <!--zhenic button list-->
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 list_shopping_zhenic">
+    {{--<!--zhenic button list-->--}}
+    {{--<div class="container">--}}
+        {{--<div class="row">--}}
+            {{--<div class="col-xs-12 list_shopping_zhenic">--}}
 
-                <button class="btn list_shopping_zhenic_btn"><img src="images/All-page-icone.png" class="All-page-icone" href="{{ route('stores.index') }}">&nbsp;&nbsp;<a href="{{ route('stores.index') }}" class="init">مشاهده لیست تمامی فروشگاه های ژنیک</a></button>
+                {{--<button class="btn list_shopping_zhenic_btn"><img src="images/All-page-icone.png" class="All-page-icone" href="{{ route('stores.index') }}">&nbsp;&nbsp;<a href="{{ route('stores.index') }}" class="init">مشاهده لیست تمامی فروشگاه های ژنیک</a></button>--}}
 
-            </div>
-        </div>
-    </div>
-    <!--ZhenicShopping(end)-->
-    <br>
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    {{--<!--ZhenicShopping(end)-->--}}
+    {{--<br>--}}
     <!--EmailBox(start)-->
     <div class="box_card_email" id="down">
 

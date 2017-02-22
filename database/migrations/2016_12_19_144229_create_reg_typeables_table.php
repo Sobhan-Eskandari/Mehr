@@ -15,9 +15,9 @@ class CreateRegTypeablesTable extends Migration
     {
         Schema::create('reg_typeables', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('reg_type_id');
-            $table->bigInteger('reg_typeable_id');
-            $table->string('reg_typeable_type');
+            $table->bigInteger('reg_type_id')->nullable();
+            $table->bigInteger('reg_typeable_id')->nullable();
+            $table->string('reg_typeable_type')->nullable();
         });
     }
 

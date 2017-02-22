@@ -151,6 +151,15 @@
         </div>
     </div>
 
+    <div class="row big_box">
+
+        {!! Form::textarea('faq', "$siteInfo->faq",['class'=>'form-control inputComments', 'id'=>'inputComments', 'rows'=>10, 'tabindex'=>'2', 'placeholder'=>'توضیحات خود را وارد کنید']) !!}
+        <script>
+            CKEDITOR.replace( 'faq' );
+        </script>
+
+    </div>
+
     <br>
     <br>
 

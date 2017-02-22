@@ -27,7 +27,7 @@ class UserEditRequest extends FormRequest
         return [
             'first_name'=>'required',
             'last_name'=>'required',
-            'social_security_number'=>'nullable|digits:10|unique:users,social_security_number,'.$this->customer,
+            'social_security_number'=>'nullable',
             'education'=>'nullable',
             'occupation'=>'nullable',
             'state'=>'required',

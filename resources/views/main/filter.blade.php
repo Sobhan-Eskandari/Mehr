@@ -111,10 +111,10 @@
                     </div>
 
                     <div class="col-md-3 col-xs-6">
-                        <div class="row">
+                        <div hidden class="row">
                             {!! Form::label('percentage', 'درصد تخفیف', ['class'=>'button_name']) !!}
                         </div>
-                        <div class="row dropdown">
+                        <div hidden class="row dropdown">
                             {!! Form::select('percentage', ['0' => 'همه', '1' =>'0 تا 20 درصد', '2' => '20 تا 40 درصد', '3' => '40 تا 60 درصد', '4' => '60 تا 80 درصد', '5' => '80 تا 100 درصد'], $_POST['percentage'],['class'=>'btn dropdown-toggle btn_all']) !!}
                         </div>
                     </div>
@@ -145,11 +145,11 @@
                         {!! Form::submit('فیلتر شدن', ['class'=>'btn filter_btn pull-left ']) !!}
                     </div>
 
-                    <div class="col-md-3 col-md-offset-0 col-sm-3 col-sm-offset-0 col-xs-4 col-xs-offset-0">
+                    <div hidden class="col-md-3 col-md-offset-0 col-sm-3 col-sm-offset-0 col-xs-4 col-xs-offset-0">
                         <label class="show_shop_title">نمایش برترین فروشگاه ها</label>
                     </div>
 
-                    <div class="col-md-3 col-md-offset-1 col-xs-4 col-xs-offset-8">
+                    <div hidden class="col-md-3 col-md-offset-1 col-xs-4 col-xs-offset-8">
                         <label class="switch">
                             @if (!isset($_POST['special']))
                                 {!! Form::checkbox('special') !!}
@@ -222,8 +222,7 @@
                                         </div>
 
                                         <div class="col-xs-6 pull-left btn_upper">
-                                            <span class="discunt_btn_img"><span class="percent">{{ $market->normal_percentage }}%</span>&nbsp;&nbsp;تخفیف</span>
-
+                                            {{--<span class="discunt_btn_img"><span class="percent">{{ $market->normal_percentage }}%</span>&nbsp;&nbsp;تخفیف</span>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -259,67 +258,67 @@
     <!----------------------------------------------------------------------------->
     <!--BestShopping(start)-->
 
-    <div class="box_card">
-        <br>
-        <!--shopping title-->
-        <div class="container">
-            <div class="row">
-                <h2 class="best_title">فروشگاه های برتر ما</h2>
-            </div>
-        </div>
+    {{--<div class="box_card">--}}
+        {{--<br>--}}
+        {{--<!--shopping title-->--}}
+        {{--<div class="container">--}}
+            {{--<div class="row">--}}
+                {{--<h2 class="best_title">فروشگاه های برتر ما</h2>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
-        <br><br><br>
-        <!--shopping card-->
-        <div class="container-fluid space_4_card">
-            <div class="row ">
+        {{--<br><br><br>--}}
+        {{--<!--shopping card-->--}}
+        {{--<div class="container-fluid space_4_card">--}}
+            {{--<div class="row ">--}}
 
-                @foreach($specialMarkets as $market)
-                    <div class="col-md-3 col-xs-6 pull-right thumbnail padding">
-                        <div class="opac_layer">
-                            @if(count($market->photos) >= 1)
-                                <img src="../marketsPhotos/{{ $market->photos[0]['address'] }}" class="img-fluid radious_img" alt="Responsive image">
-                            @else
-                                <img src="https://placehold.it/200x200" class="img-fluid radious_img" alt="Responsive image">
-                            @endif
-                            <div class="row">
-                                <div class="col-xs-10 col-xs-offset-2">
-                                    <div class="back_layer">
-                                        <h2 class="name_shopping">{{ $market->market_name }}</h2>
-                                        <br>
-                                        <div class="row">
-                                            <div class="col-xs-6 pull-right">
-                                                <h3 class="detail_title"><a href="{{ route('stores.show', $market->id) }}" class="detail_title">مشاهده جزییات</a></h3>
-                                            </div>
+                {{--@foreach($specialMarkets as $market)--}}
+                    {{--<div class="col-md-3 col-xs-6 pull-right thumbnail padding">--}}
+                        {{--<div class="opac_layer">--}}
+                            {{--@if(count($market->photos) >= 1)--}}
+                                {{--<img src="../marketsPhotos/{{ $market->photos[0]['address'] }}" class="img-fluid radious_img" alt="Responsive image">--}}
+                            {{--@else--}}
+                                {{--<img src="https://placehold.it/200x200" class="img-fluid radious_img" alt="Responsive image">--}}
+                            {{--@endif--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col-xs-10 col-xs-offset-2">--}}
+                                    {{--<div class="back_layer">--}}
+                                        {{--<h2 class="name_shopping">{{ $market->market_name }}</h2>--}}
+                                        {{--<br>--}}
+                                        {{--<div class="row">--}}
+                                            {{--<div class="col-xs-6 pull-right">--}}
+                                                {{--<h3 class="detail_title"><a href="{{ route('stores.show', $market->id) }}" class="detail_title">مشاهده جزییات</a></h3>--}}
+                                            {{--</div>--}}
 
-                                            <div class="col-xs-6 pull-left btn_upper">
-                                                <span class="discunt_btn_img"><span class="percent">{{ $market->normal_percentage }}%</span>&nbsp;&nbsp;تخفیف</span>
+                                            {{--<div class="col-xs-6 pull-left btn_upper">--}}
+                                                {{--<span class="discunt_btn_img"><span class="percent">{{ $market->normal_percentage }}%</span>&nbsp;&nbsp;تخفیف</span>--}}
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--@endforeach--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-3 col-xs-6 col-xs-offset-1">
+        {{--<br>--}}
+        {{--<div class="container">--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-3 col-xs-6 col-xs-offset-1">--}}
 
-                    <a href="{{ route('BestMarkets') }}"><button class="btn first_shopping_btn">
-                            فروشگاه های برتر
-                        </button></a>
+                    {{--<a href="{{ route('BestMarkets') }}"><button class="btn first_shopping_btn">--}}
+                            {{--فروشگاه های برتر--}}
+                        {{--</button></a>--}}
 
-                </div>
-            </div>
-        </div>
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
-        <br><br><br>
-    </div>
+        {{--<br><br><br>--}}
+    {{--</div>--}}
 
 
 

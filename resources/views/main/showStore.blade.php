@@ -30,7 +30,7 @@
                 <div id="top_container">
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 pull-left" id="takhfif_btn">
-                            <span class="discunt_btn_img"><span class="percent">{{ $selectedMarket->normal_percentage }}٪</span>&nbsp;&nbsp;تخفیف</span>
+{{--                            <span class="discunt_btn_img"><span class="percent">{{ $selectedMarket->normal_percentage }}٪</span>&nbsp;&nbsp;تخفیف</span>--}}
                         </div>
                         <div id="store_name" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <h2>{{ $selectedMarket->market_name }}</h2>
@@ -178,79 +178,77 @@
                 </div>
             </div>
         </div>
-    </div>
 
     <br>
     <br>
     <br>
     <!--BestShopping(start)-->
 
-    <div class="box_card">
-        <br>
-        <!--shopping title-->
-        <div class="container">
-            <div class="row">
-                <h2 class="best_title">فروشگاه های برتر ما</h2>
-            </div>
-        </div>
+    {{--<div class="box_card">--}}
+        {{--<br>--}}
+        {{--<!--shopping title-->--}}
+        {{--<div class="container">--}}
+            {{--<div class="row">--}}
+                {{--<h2 class="best_title">فروشگاه های برتر ما</h2>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
-        <br>
-        <br>
-        <br>
-        <!--shopping card-->
-        <div class="container-fluid space_4_card">
-            <div class="row">
+        {{--<br>--}}
+        {{--<br>--}}
+        {{--<br>--}}
+        {{--<!--shopping card-->--}}
+        {{--<div class="container-fluid space_4_card">--}}
+            {{--<div class="row">--}}
 
-                @foreach($specialMarkets as $market)
-                <div class="col-md-3 col-xs-6 thumbnail padding">
-                    <div class="opac_layer">
-                        @if(count($market->photos) >= 1)
-                            <img src="../marketsPhotos/{{ $market->photos[0]['address'] }}" class="img-fluid radious_img" alt="Responsive image">
-                        @else
-                            <img src="https://placehold.it/200x200" class="img-fluid radious_img" alt="Responsive image">
-                        @endif
-                        <div class="row">
-                            <div class="col-xs-12 ">
-                                <div class="back_layer">
-                                    <h2 class="name_shopping">{{ $market->market_name }}</h2>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-xs-6 pull-right">
-                                            <h3 class="detail_title"><a href="{{ route('stores.show', $market->id) }}" class="detail_title">مشاهده جزییات</a></h3>
-                                        </div>
+                {{--@foreach($specialMarkets as $market)--}}
+                {{--<div class="col-md-3 col-xs-6 thumbnail padding">--}}
+                    {{--<div class="opac_layer">--}}
+                        {{--@if(count($market->photos) >= 1)--}}
+                            {{--<img src="../marketsPhotos/{{ $market->photos[0]['address'] }}" class="img-fluid radious_img" alt="Responsive image">--}}
+                        {{--@else--}}
+                            {{--<img src="https://placehold.it/200x200" class="img-fluid radious_img" alt="Responsive image">--}}
+                        {{--@endif--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-xs-12 ">--}}
+                                {{--<div class="back_layer">--}}
+                                    {{--<h2 class="name_shopping">{{ $market->market_name }}</h2>--}}
+                                    {{--<br>--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-xs-6 pull-right">--}}
+                                            {{--<h3 class="detail_title"><a href="{{ route('stores.show', $market->id) }}" class="detail_title">مشاهده جزییات</a></h3>--}}
+                                        {{--</div>--}}
 
-                                        <div class="col-xs-6 pull-left btn_upper">
-                                            <span class="discunt_btn_img"><span class="percent">{{ $market->normal_percentage }}%</span>&nbsp;&nbsp;تخفیف</span>
+                                        {{--<div class="col-xs-6 pull-left btn_upper">--}}
+                                            {{--<span class="discunt_btn_img"><span class="percent">{{ $market->normal_percentage }}%</span>&nbsp;&nbsp;تخفیف</span>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--@endforeach--}}
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
+            {{--</div>--}}
+        {{--</div>--}}
 
-            </div>
-        </div>
+        {{--<br>--}}
+        {{--<div class="container">--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-3 col-xs-6 col-xs-offset-1">--}}
 
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-3 col-xs-6 col-xs-offset-1">
+                    {{--<a href="{{ route('BestMarkets') }}"><button class="btn first_shopping_btn">--}}
+                        {{--فروشگاه های برتر--}}
+                    {{--</button></a>--}}
 
-                    <a href="{{ route('BestMarkets') }}"><button class="btn first_shopping_btn">
-                        فروشگاه های برتر
-                    </button></a>
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
-                </div>
-            </div>
-        </div>
-
-        <br>
-        <br>
-        <br>
-    </div>
+        {{--<br>--}}
+        {{--<br>--}}
+        {{--<br>--}}
+    {{--</div>--}}
 
 @endsection
 

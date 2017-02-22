@@ -15,8 +15,8 @@ class CreateMarketTagTabel extends Migration
     {
         Schema::create('market_tag', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-            $table->bigInteger('market_id')->unsigned();
-            $table->bigInteger('tag_id')->unsigned();
+            $table->bigInteger('market_id')->nullable()->unsigned();
+            $table->bigInteger('tag_id')->nullable()->unsigned();
         });
     }
 

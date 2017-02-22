@@ -6,15 +6,11 @@
 
 @section('js2')
     <script src="js/jquery-2.1.4.min.js"></script>
-    <style>
-        .h4, h4 {
-            font-size: 17px;
-        }
-    </style>
 @endsection
 
 @section('css')
-    <link href="css/faq.css" rel="stylesheet" type="text/css" />
+    <link href="css/aboutZhenic.css" rel="stylesheet" type="text/css" />
+    <link href="css/homePage.css" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('contactUs')
@@ -23,119 +19,49 @@
 
 @section('content')
 
-    <div class="carousel slide"  id="featured">
-    <!--button slideShow-->
-    <ol class="carousel-indicators">
-        <li data-target="#featured" data-slide-to="0" class="active"></li>
-        <li data-target="#featured" data-slide-to="1"></li>
-        <li data-target="#featured" data-slide-to="2"></li>
-    </ol>
-    <!--img slideShow-->
-    <div class="carousel-inner">
-        <div class="item active">
-            @if (count($sliders) >= 1)
-                <img src="ZhenicImages/{{ $sliders[0]['address'] }}" class="slideShow_img">
-            @else
-                <img src="https://placehold.it/4000x1700" class="slideShow_img">
-            @endif
-        </div>
-        <div class="item">
-            @if (count($sliders) >= 2)
-                <img src="ZhenicImages/{{ $sliders[1]['address'] }}" class="slideShow_img">
-            @else
-                <img src="https://placehold.it/4000x1700" class="slideShow_img">
-            @endif
-        </div>
-        <div class="item">
-            @if (count($sliders) >= 3)
-                <img src="ZhenicImages/{{ $sliders[2]['address'] }}" class="slideShow_img">
-            @else
-                <img src="https://placehold.it/4000x1700" class="slideShow_img">
-            @endif
-        </div>
-    </div>
-    <!--left and right button slide show-->
-    <a class="left carousel-control" href="#featured" role="button"  data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-
-    <a class="right carousel-control" href="#featured" role="button"  data-slide="next" >
-        <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-</div>
-
-<!--button section-->
-<div class="button_box">
-    <div class="container button_container">
+    <div class="container" id="services_container">
         <div class="row">
-            <div class="col-xs-12">
-
+            <div id="service_title" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!------------ Detail of Service ------------>
+                <img src="images/horoof-negar-meshki.png" class="img-responsive">
+                <h2>سوالات متداول</h2>
+                <br>
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-xs-12">
-                        <div class="btn-group col-xs-10 col-xs-offset-1">
-                            <button type="button" class="btn different_question_img"> <i class="fa fa-file-text-o" aria-hidden="true"></i></button>
-                            <button type="button" class="btn different_question"><a href="{{ route('FAQ') }}">سوالات متداول</a></button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-xs-12">
-                        <div class="btn-group col-xs-10 col-xs-offset-1">
-                            <button type="button" class="btn shopping_img"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
-                            <button type="button" class="btn shopping">فروشگاه ها روی نقشه</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-xs-12">
-                        <div class="btn-group col-xs-10 col-xs-offset-1">
-                            <button type="button" class="btn android_img"><i class="fa fa-android" aria-hidden="true"></i></button>
-                            <button type="button" class="btn android">دانلود اپلیکیشن ژنیک</button>
-                        </div>
+                    <div class="col-xs-12 col-md-12 col-lg-12 col-sm-12">
+                        <textarea id="news_text">{{ \App\SiteInfo::findOrFail(1)->faq }}</textarea>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-lg-12 col-sm-12" id="news_text_show">
+                        <textarea>{{ \App\SiteInfo::findOrFail(1)->faq }}</textarea>
+                    </div>
+                </div>
+
+                <script>
+                    $( document ).ready(function() {
+                        $('#news_text_show').html($('#news_text').text());
+                        $('#news_text').css("display","none")
+                    });
+                </script>
+{{--                <p>{{ \App\SiteInfo::findOrFail(1)->faq }}</p>--}}
+                {{--<h3>کار ما فروش قالب نیست ما تجربیات دیجیتال خلق میکنیم</h3>--}}
             </div>
         </div>
-    </div>
-</div>
+        {{--<!------------ Small Features Detail ------------>--}}
+        {{--<div class="row features">--}}
+            {{--<div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1--}}
+                     {{--col-sm-5 col-sm-offset-1 col-xs-10 services_small_Sect">--}}
+                {{--<h4>کار ما فروش قالب نیست ما تجربیات دیجیتال خلق میکنیم</h4>--}}
+                {{--<p>اهدای جایزه چتم هاوس به جان کری. پیشتر اعلام شده بود جواد ظریف به دلیل برنامه‌های از پیش تعیین شده قادر به حضور در مراسم اهدا جایزهعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما</p>--}}
+            {{--</div>--}}
+            {{--<div class="col-lg-5 col-lg-offset-0 col-md-5 col-md-offset-0--}}
+                     {{--col-sm-5 col-sm-offset-0 col-xs-10 services_small_Sect">--}}
+                {{--<h4>کار ما فروش قالب نیست ما تجربیات دیجیتال خلق میکنیم</h4>--}}
+                {{--<p>اهدای جایزه چتم هاوس به جان کری. پیشتر اعلام شده بود جواد ظریف به دلیل برنامه‌های از پیش تعیین شده قادر به حضور در مراسم اهدا جایزهعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما</p>--}}
+            {{--</div>--}}
 
-<div class="container" id="faq_container">
-    <div class="row">
-        <div class="col-lg-12">
-            <div>
-                <div class="row">
-                    <div id="faq_title" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h2>سوالات متداول</h2>
-                        <br>
-                    </div>
-                </div>
-                <!------------ quesiotns and answers ------------>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 line">
-                        <h4 class="question_ans_cadr">اهدای جایزه چتم هاوس به جان کری. پیشتر اعلام شده بود جواد ظریف به دلیل برنامه‌های از پیش تعیین شده قادر به حضور در مراسم اهدا جایزه مشترک وی نخواهد بود
-                        </h4>
-                        <p class="question_ans_cadr"><span>پاسخ : </span>اهدای جایزه چتم هاوس به جان کری. پیشتر اعلام شده بود جواد ظریف به دلیل برنامه‌های از پیش تعیین شده قادر به حضور در مراسم اهدا جایزه مشترک وی نخواهد بود
-                        </p>
-                        <hr class="faq_hr">
-                        <h4 class="question_ans_cadr">اهدای جایزه چتم هاوس به جان کری. پیشتر اعلام شده بود جواد ظریف به دلیل برنامه‌های از پیش تعیین شده قادر به حضور در مراسم اهدا جایزه مشترک وی نخواهد بود
-                        </h4>
-                        <p class="question_ans_cadr"><span>پاسخ : </span>اهدای جایزه چتم هاوس به جان کری. پیشتر اعلام شده بود جواد ظریف به دلیل برنامه‌های از پیش تعیین شده قادر به حضور در مراسم اهدا جایزه مشترک وی نخواهد بود
-                        </p>
-                    </div>
-                    <div class="col-lg-6 col-lg-md-6 col-sm-6 col-xs-12">
-                        <h4 class="question_ans_cadr">اهدای جایزه چتم هاوس به جان کری. پیشتر اعلام شده بود جواد ظریف به دلیل برنامه‌های از پیش تعیین شده قادر به حضور در مراسم اهدا جایزه مشترک وی نخواهد بود
-                        </h4>
-                        <p class="question_ans_cadr"><span>پاسخ : </span>اهدای جایزه چتم هاوس به جان کری. پیشتر اعلام شده بود جواد ظریف به دلیل برنامه‌های از پیش تعیین شده قادر به حضور در مراسم اهدا جایزه مشترک وی نخواهد بود
-                        </p>
-                        <hr class="faq_hr">
-                        <h4 class="question_ans_cadr">اهدای جایزه چتم هاوس به جان کری. پیشتر اعلام شده بود جواد ظریف به دلیل برنامه‌های از پیش تعیین شده قادر به حضور در مراسم اهدا جایزه مشترک وی نخواهد بود
-                        </h4>
-                        <p class="question_ans_cadr"><span>پاسخ : </span>اهدای جایزه چتم هاوس به جان کری. پیشتر اعلام شده بود جواد ظریف به دلیل برنامه‌های از پیش تعیین شده قادر به حضور در مراسم اهدا جایزه مشترک وی نخواهد بود
-                        </p>
-                    </div>
-                </div>
-                <br>
-                <br>
-            </div>
-        </div>
+        {{--</div>--}}
     </div>
-</div>
 
 @endsection
 

@@ -123,40 +123,39 @@ class marketController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Redirect
      */
     public function store(marketRequest $request)
     {
-        //
         $newTagId=[];
         $input = $request->all();
-        if ($input['special_percentage_start']==''){
-            $input['special_percentage_start']= null;
+
+        foreach ($input as $key => $value){
+            if($value == ''){
+                $input[$key] = null;
+            }
         }
+
         $input['contract_start']=str_replace('/','-',$request->contract_start);
         $input['contract_end']=str_replace('/','-',$request->contract_end);
+
         if(empty($input['contract_start'])){
             $input['contract_start'] = jDate::forge('now')->format('date');
         }
+
         if(empty($input['contract_end'])){
             $end = explode('-',$input['contract_start']);
             $end[0] = $end[0] + 1;
             $end = implode('-',$end);
             $input['contract_end'] = $end;
-//            $input['contract_end'] = jDate::forge($input['contract_start'] . '+ 1 years' )->format('date');
-//            dd($input['contract_end']);
         }
+
         $input['special_percentage_start']=str_replace('/','-',$request->special_percentage_start);
         $input['special_percentage_end']=str_replace('/','-',$request->special_percentage_end);
         $input['start']=str_replace('/','-',$request->start);
         $input['end']=str_replace('/','-',$request->end);
         $input['creator_id'] = 0;
-        if ($input['special_percentage_start']==''){
-            $input['special_percentage_start']= null;
-        }
-        if ($input['special_percentage_end']==''){
-            $input['special_percentage_end']= null;
-        }
+
         if($newTags = $request->newTags){
             $newTagss = explode(",",$newTags);
             foreach ($newTagss as $newTag){
@@ -170,9 +169,8 @@ class marketController extends Controller
             }
         }
 
-//        dd($input);
-
         $market = Market::create($input);
+
         if($tags = $request->tags || !empty($newTagId)){
             $tags = $request->tags;
             if(!empty($newTagId)){
@@ -180,28 +178,24 @@ class marketController extends Controller
                     $tags[] = $ids;
                 }
             }
-            //dd($tags);
             $market->tags()->sync($tags);
         }
+
         if($categories = $request->categories){
             $market->categories()->attach($categories);
         }
+
         if($regType = $request->regType){
             $market->regTypes()->attach($regType);
         }
+
         if($marketCategories = $request->marketsCategories){
             $market->mategories()->attach($marketCategories);
         }
+
         $images[] = $request->file('img1');
         $images[] = $request->file('img2');
         $images[] = $request->file('img3');
-//        $date = jDate::forge('now')->format('date');
-//        if($input['contract_end'] = $date){
-//            return '';
-//        }
-//        return $date;// 1391-10-02
-
-//        dd($images);
 
         foreach ($images as $image){
             if($image) {
@@ -210,20 +204,23 @@ class marketController extends Controller
                 $image->move('marketsPhotos', $name);
                 $market->photos()->save($photo);
             }else{
-                $photo = Photo::find(1);
-                $market->photos()->save($photo);
+//                $photo = Photo::find(1);
+//                $market->photos()->save($photo);
             }
         }
+
         if($logo = $request->file('logo')){
             $name = time() . $logo->getClientOriginalName();
             $photo =new logo(['address' => $name]);
             $logo->move('marketsPhotos', $name);
             $market->logo()->save($photo);
         }else{
-            $logo = Logo::find(1);
-            $market->logo()->save($logo);
+//            $logo = logo::find(1);
+//            $market->logo()->save($logo);
         }
+
         Session::flash('message', 'فروشگاه ساخته شد');
+
         return redirect('/markets');
     }
 
@@ -347,15 +344,18 @@ class marketController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Redirect
      */
     public function update(EditMarketRequest $request, $id)
     {
         $input = $request->all();
-//        dd($input);
-        if ($input['special_percentage']==''){
-            $input['special_percentage']= null;
+
+        foreach ($input as $key => $value){
+            if($value == ''){
+                $input[$key] = null;
+            }
         }
+
         $input['contract_end']=str_replace('/','-',$request->contract_end);
         $input['contract_start']=str_replace('/','-',$request->contract_start);
         $input['special_percentage_start']=str_replace('/','-',$request->special_percentage_start);
@@ -363,12 +363,7 @@ class marketController extends Controller
         $input['start']=str_replace('/','-',$request->start);
         $input['end']=str_replace('/','-',$request->end);
         $input['creator_id'] = 0;
-        if ($input['special_percentage_start']==''){
-            $input['special_percentage_start']= null;
-        }
-        if ($input['special_percentage_end']==''){
-            $input['special_percentage_end']= null;
-        }
+
         if($newTags = $request->newTags){
             $newTagss = explode(",",$newTags);
             foreach ($newTagss as $newTag){
@@ -381,7 +376,9 @@ class marketController extends Controller
                 }
             }
         }
+
         $market = Market::findOrFail($id);
+
         if($tags = $request->tags || !empty($newTagId)){
             $tags = $request->tags;
             if(!empty($newTagId)){
@@ -393,26 +390,28 @@ class marketController extends Controller
         }else{
             $market->tags()->detach();
         }
+
         if($categories = $request->categories){
             $market->categories()->sync($categories);
         }else{
             $market->categories()->detach();
         }
 
-
         if($regType[] = $request->regType){
             $market->regTypes()->sync($regType);
         }else{
             $market->regTypes()->detach();
         }
+
         if($marketCategories = $request->marketsCategories){
             $market->mategories()->sync($marketCategories);
         }else{
             $market->mategories()->detach();
         }
+
         $photos = $market->photos;
 
-	if($file = $request->file('img1')){
+	    if($file = $request->file('img1')){
             if(count($photos) != 0 && isset($photos[0])){
                 File::delete('marketsPhotos/' . $photos[0]->address);
                 Photo::find($photos[0]->id)->delete();
@@ -461,7 +460,9 @@ class marketController extends Controller
         }
 
         $market->update($input);
+
         Session::flash('message', 'فروشگاه به روز شد');
+
         return redirect('/markets');
 
     }

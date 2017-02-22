@@ -16,12 +16,11 @@ class HomePageController extends Controller
      */
     public function homePage()
     {
-        $specialMarkets = Market::whereMarket_type(1)->limit(4)->get();
-        $normalMarkets = Market::whereMarket_type(0)->limit(6)->get();
+        $normalMarkets = Market::all();
         $rollingNews = News::orderBy('created_at', 'desc')->limit(3)->get();
         $siteInfo = SiteInfo::findOrFail(1);
         $sliders = $siteInfo->photos;
-        return view('main.index', compact('specialMarkets', 'sliders', 'normalMarkets', 'rollingNews'));
+        return view('main.index', compact('sliders', 'normalMarkets', 'rollingNews'));
     }
 
     /**

@@ -15,8 +15,8 @@ class CreateMarketMategoryTabel extends Migration
     {
         Schema::create('market_mategorty', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-            $table->bigInteger('market_id')->unsigned();
-            $table->bigInteger('mategorty_id')->unsigned();
+            $table->bigInteger('market_id')->nullable()->unsigned();
+            $table->bigInteger('mategorty_id')->nullable()->unsigned();
         });
     }
 

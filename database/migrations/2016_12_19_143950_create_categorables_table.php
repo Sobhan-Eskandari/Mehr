@@ -15,9 +15,9 @@ class CreateCategorablesTable extends Migration
     {
         Schema::create('categorables', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('category_id');
-            $table->bigInteger('categorable_id');
-            $table->string('categorable_type');
+            $table->bigInteger('category_id')->nullable();
+            $table->bigInteger('categorable_id')->nullable();
+            $table->string('categorable_type')->nullable();
         });
     }
 

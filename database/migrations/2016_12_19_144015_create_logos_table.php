@@ -16,9 +16,9 @@ class CreateLogosTable extends Migration
         Schema::create('logos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('market_id')->unsigned();
-            $table->string('address');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->string('address')->nullable();
+            $table->dateTime('created_at')->nullable();
+            $table->dateTime('updated_at')->nullable();
         });
     }
 

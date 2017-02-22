@@ -87,7 +87,7 @@ class StoresController extends Controller
     {
         $specialMarkets = Market::whereMarket_type(1)->limit(4)->get();
         $selectedMarket = Market::findOrFail($id);
-        if(isset($selectedMarket->special_percentage_start)){
+        if($selectedMarket->special_percentage_start != ''){
             $startDate = explode("-", $selectedMarket->special_percentage_start);
             if ($startDate[2] <= 9){
                 $startDate[2] = '0' . $startDate[2];
@@ -98,7 +98,7 @@ class StoresController extends Controller
             $correctStartDate = implode("-", $startDate);
         }
 
-        if(isset($selectedMarket->special_percentage_end)){
+        if($selectedMarket->special_percentage_end != ''){
             $endDate = explode("-", $selectedMarket->special_percentage_end);
             if ($endDate[2] <= 9){
                 $endDate[2] = '0' . $endDate[2];
@@ -226,30 +226,15 @@ class StoresController extends Controller
             $tail = 100;
         }
 
-        $results = Market::where('state', 'like', "%{$input['state']}%")
+        $markets = Market::where('state', 'like', "%{$input['state']}%")
             ->where('city', 'like', "%{$input['city']}%")
-            ->whereBetween('normal_percentage', [$head, $tail])
-            ->whereMarket_type($input['special'])
+//            ->whereBetween('normal_percentage', [$head, $tail])
+//            ->whereMarket_type($input['special'])
             ->get();
 
         /**
          * working until the above
          */
-        if($input['market_type'] != 0){
-            foreach ($results as $market){
-                for($i = 0; $i < count($market->mategories); $i++){
-                    if ($market->mategories[$i]['name'] == $input['market_type']){
-                        $markets[] = $market;
-                    }
-                }
-            }
-        }else{
-            $markets = $results;
-        }
-
-        if(!isset($markets)){
-            $markets[] = [];
-        }
 
         $states = [
             '0'=>'انتخاب کنید',
@@ -285,11 +270,10 @@ class StoresController extends Controller
             'همدان'=>'همدان',
             'یزد'=>'یزد'
         ];
-//        dd($input);
+
         $market_type = Mategorty::pluck('name', 'name')->all();
-        $specialMarkets = Market::whereMarket_type(1)->limit(4)->get();
         $siteInfo = SiteInfo::findOrFail(1);
         $sliders = $siteInfo->photos;
-        return view('main.filter', compact('markets', 'specialMarkets', 'states', 'market_type', 'sliders'));
+        return view('main.filter', compact('markets', 'states', 'market_type', 'sliders'));
     }
 }

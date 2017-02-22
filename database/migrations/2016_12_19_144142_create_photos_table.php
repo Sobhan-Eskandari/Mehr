@@ -15,9 +15,9 @@ class CreatePhotosTable extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-            $table->string('address');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->string('address')->nullable();
+            $table->dateTime('created_at')->nullable();
+            $table->dateTime('updated_at')->nullable();
         });
     }
 

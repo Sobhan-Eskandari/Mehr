@@ -15,10 +15,10 @@ class CreateTracksTable extends Migration
     {
         Schema::create('tracks', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-            $table->string('name');
-            $table->bigInteger('count');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->string('name')->nullable();
+            $table->bigInteger('count')->nullable();
+            $table->dateTime('created_at')->nullable();
+            $table->dateTime('updated_at')->nullable();
         });
     }
 

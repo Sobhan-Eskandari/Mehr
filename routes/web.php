@@ -332,6 +332,19 @@ Route::get('/json-news/{id?}', function($id = null) {
     return $response;
 });
 
+Route::get('/site-info', function() {
+    $info = \App\SiteInfo::findOrFail(1);
+    $info['faq'] = strip_tags($info['faq']);
+
+    $response =  Response::json(array(
+        'error' => false,
+        'news' => $info,
+        'status_code' => 200
+    ));
+
+    return $response;
+});
+
 //Route::get('sendSms/{number}','sms@sendSms')->name('sendSms');
 //////sms
 

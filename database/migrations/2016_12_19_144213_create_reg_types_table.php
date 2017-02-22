@@ -15,9 +15,9 @@ class CreateRegTypesTable extends Migration
     {
         Schema::create('reg_types', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-            $table->string('name');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->string('name')->nullable();
+            $table->dateTime('created_at')->nullable();
+            $table->dateTime('updated_at')->nullable();
         });
     }
 

@@ -117,15 +117,25 @@ class UserController extends Controller
     {
         $input = $request->all();
 
+        foreach ($input as $key => $value){
+            if($value == ''){
+                $input[$key] = null;
+            }
+        }
+
         $input['description'] = $input['text'];
 
         $input['password'] = bcrypt($request->password);
 
         $user = User::create($input);
 
-        $user->regTypes()->sync([$input['reg_type']]);
+        if(!is_null($input['reg_type'])){
+            $user->regTypes()->sync([$input['reg_type']]);
+        }
 
-        $user->categories()->sync($input['categories']);
+        if(isset($input['categories'])) {
+            $user->categories()->sync($input['categories']);
+        }
 
         return redirect('/customers');
     }
@@ -251,14 +261,24 @@ class UserController extends Controller
             $input['password'] = bcrypt($request->password);
         }
 
+        foreach ($input as $key => $value){
+            if($value == ''){
+                $input[$key] = null;
+            }
+        }
+
         $input['description'] = $input['text'];
 
-        if(isset($input['reg_type'])){
+        if(!is_null($input['reg_type'])){
             $user->regTypes()->sync([$input['reg_type']]);
+        }else{
+            $user->regTypes()->detach();
         }
 
         if (isset($input['categories'])){
             $user->categories()->sync($input['categories']);
+        }else{
+            $user->categories()->detach();
         }
 
         $user->update($input);
