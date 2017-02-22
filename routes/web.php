@@ -34,7 +34,7 @@ Route::get('/aboutUs', function () {
 
 Route::get('/contactUs', 'MessageController@ContactUsView')->name('contactUs');
 
-Route::get('/FAQ', 'HomePageController@FAQView')->name('FAQ');
+Route::get('/FAQs', 'FAQController@FAQView')->name('FAQ');
 
 Route::get('/services/{id}', function ($id) {
     return view('main.services', compact('id'));
@@ -60,7 +60,7 @@ Route::group(['prefix' => 'admin'], function () {
 Route::group(['middleware' => 'admin'], function (){
 
     //////NewsController
-//    Route::resource('/News', 'NewsController');
+    Route::resource('/FAQ', 'FAQController');
     Route::get('/NewsDash', 'NewsController@DashIndex')->name('News.DashIndex');
     Route::get('/NewsResult', 'NewsController@DashIndex');
     Route::post('/NewsDash/result', 'NewsController@SearchNews');

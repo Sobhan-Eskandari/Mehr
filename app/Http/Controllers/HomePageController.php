@@ -88,11 +88,4 @@ class HomePageController extends Controller
     {
         //
     }
-
-    public function FAQView()
-    {
-        $siteInfo = SiteInfo::findOrFail(1);
-        $sliders = $siteInfo->photos;
-        return view('main.FAQ', compact('sliders'));
-    }
 }

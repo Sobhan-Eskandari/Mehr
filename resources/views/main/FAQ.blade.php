@@ -26,6 +26,19 @@
                 <img src="images/horoof-negar-meshki.png" class="img-responsive">
                 <h2>سوالات متداول</h2>
                 <br>
+                @foreach($FAQs as $FAQ)
+                    <div class="col-lg-5 col-lg-offset-0 col-md-5 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-10 services_small_Sect">
+                        <h4>{{ $FAQ->question }}</h4>
+                        <p class="text_news" id="{{ $FAQ->id }}">{{ $FAQ->answer }}</p>
+                        <p class="text_news" id="{{ $FAQ->id }}_show"></p>
+                    </div>
+                    <script>
+                        $( document ).ready(function() {
+                            $('#{{ $FAQ->id }}_show').html($('#{{ $FAQ->id }}').text());
+                            $('#{{ $FAQ->id }}').css("display","none")
+                        });
+                    </script>
+                @endforeach
                 <div class="row">
                     <div class="col-xs-12 col-md-12 col-lg-12 col-sm-12">
                         <textarea id="news_text">{{ \App\SiteInfo::findOrFail(1)->faq }}</textarea>
