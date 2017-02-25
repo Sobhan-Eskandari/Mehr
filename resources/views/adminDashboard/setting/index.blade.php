@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | تنظیمات
+    مهرکارت | تنظیمات
 @endsection
 
 @section('js2')
@@ -66,6 +66,11 @@
     {!! Form::open(['method'=>'POST', 'action'=>'AdminController@info', 'files'=>true]) !!}
         {{ csrf_field() }}
 
+    @if (count($siteInfo->photos) >= 1)
+        <img src="ZhenicImages/{{ $siteInfo->photos[0]['address'] }}" class="big_box" style="width: 100px;height: 100px;margin-right: 60px;">
+    @else
+        <img class="big_box" style="width: 100px;height: 100px;margin-right: 60px;" src="../../../images/cardImage.jpg">
+    @endif
     <div class="row big_box">
         <div class="col-md-3 col-md-offset-0 col-xs-5">
             <label class="btn btn-default btn-file upload_btn">
@@ -81,6 +86,11 @@
 
     <br>
 
+    @if (count($siteInfo->photos) >= 2)
+        <img src="ZhenicImages/{{ $siteInfo->photos[1]['address'] }}" class="big_box" style="width: 100px;height: 100px;margin-right: 60px;">
+    @else
+        <img class="big_box" style="width: 100px;height: 100px;margin-right: 60px;" src="../../../images/cardImage.jpg">
+    @endif
     <div class="row big_box">
         <div class="col-md-3 col-md-offset-0 col-xs-5">
             <label class="btn btn-default btn-file upload_btn">
@@ -95,7 +105,11 @@
     </div>
 
     <br>
-
+    @if (count($siteInfo->photos) >= 3)
+        <img src="ZhenicImages/{{ $siteInfo->photos[2]['address'] }}" class="big_box" style="width: 100px;height: 100px;margin-right: 60px;">
+    @else
+        <img class="big_box" style="width: 100px;height: 100px;margin-right: 60px;" src="../../../images/cardImage.jpg">
+    @endif
     <div class="row big_box">
         <div class="col-md-3 col-md-offset-0 col-xs-5">
             <label class="btn btn-default btn-file upload_btn">

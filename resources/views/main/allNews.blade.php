@@ -1,7 +1,7 @@
 @extends('layouts.zhenicSite')
 
 @section('title')
-    ژنیک | اطلاعیه‌ها
+    مهرکارت | اطلاعیه‌ها
 @endsection
 
 @section('js2')
@@ -80,13 +80,13 @@
                     <div class="col-lg-4 col-md-4 col-xs-12">
                         <div class="btn-group col-xs-10 col-xs-offset-1">
                             <button type="button" class="btn shopping_img"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
-                            <button type="button" class="btn shopping">فروشگاه ها روی نقشه</button>
+                            <button type="button" class="btn shopping">مطب ها روی نقشه</button>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-xs-12">
                         <div class="btn-group col-xs-10 col-xs-offset-1">
                             <button type="button" class="btn android_img"><i class="fa fa-android" aria-hidden="true"></i></button>
-                            <button type="button" class="btn android">دانلود اپلیکیشن ژنیک</button>
+                            <button type="button" class="btn android">دانلود اپلیکیشن مهرکارت</button>
                         </div>
                     </div>
                 </div>

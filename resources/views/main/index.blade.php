@@ -1,7 +1,7 @@
 @extends('layouts.zhenicSite')
 
 @section('title')
-    ژنیک | خانه
+    مهرکارت | خانه
 @endsection
 
 @section('js2')
@@ -79,13 +79,13 @@
                         <div class="col-lg-4 col-md-4 col-xs-12">
                             <div class="btn-group col-xs-10 col-xs-offset-1">
                                 <button type="button" class="btn shopping_img"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
-                                <button type="button" class="btn shopping">فروشگاه ها روی نقشه</button>
+                                <button type="button" class="btn shopping">مطب ها روی نقشه</button>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-xs-12">
                             <div class="btn-group col-xs-10 col-xs-offset-1">
                                 <button type="button" class="btn android_img"><i class="fa fa-android" aria-hidden="true"></i></button>
-                                <button type="button" class="btn android">دانلود اپلیکیشن ژنیک</button>
+                                <button type="button" class="btn android">دانلود اپلیکیشن مهرکارت</button>
                             </div>
                         </div>
                     </div>
@@ -125,7 +125,7 @@
                 <hr class="hr_service">
             </div>
             <div class="col-xs-4">
-                <h1 class="service_title">خدمات ژنیک</h1>
+                <h1 class="service_title">خدمات مهرکارت</h1>
             </div>
             <div class="col-xs-4 top">
                 <hr class="hr_service">
@@ -143,7 +143,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -155,7 +155,7 @@
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>1]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -174,7 +174,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -186,7 +186,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>3]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -204,7 +204,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -216,7 +216,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>2]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -234,7 +234,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -246,7 +246,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>1]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -267,7 +267,7 @@
         <!--shopping title-->
         <div class="container">
             <div class="row">
-                <h2 class="best_title">فروشگاه های ما</h2>
+                <h2 class="best_title">مطب های ما</h2>
             </div>
         </div>
 
@@ -279,30 +279,26 @@
                 @foreach($normalMarkets as $market)
                     @if($market->market_type == 0)
                         <div class="col-md-3 col-xs-6 pull-right thumbnail padding">
+                            <a href="{{ route('stores.show', $market->id) }}" class="detail_title">
                             <div class="opac_layer">
                                 @if(count($market->photos) >= 1)
                                     <img src="marketsPhotos/{{ $market->photos[0]['address'] }}" class="img-fluid radious_img" alt="Responsive image">
                                 @else
-                                    <img src="https://placehold.it/200x200" class="img-fluid radious_img" alt="Responsive image">
+                                    <img src="images/cardImage.jpg" class="img-fluid radious_img" alt="Responsive image">
                                 @endif
                                 <div class="row">
-                                    <div class="col-xs-10 col-xs-offset-2 ">
+                                    <div class="col-xs-10 col-xs-offset-1">
                                         <div class="back_layer">
                                             <h2 class="name_shopping">{{ $market->market_name }}</h2>
-                                            <br>
-                                            <div class="row">
-                                                <div class="col-xs-6 pull-right">
-                                                    <h3 class="detail_title"><a href="{{ route('stores.show', $market->id) }}" class="detail_title">مشاهده جزییات</a></h3>
-                                                </div>
-
-                                                <div class="col-xs-6 pull-left btn_upper">
-                                                    <span class="discunt_btn_img">{{ $market->city }}</span>
-                                                </div>
+                                            <div class="btn_upper">
+                                                <span class="discunt_btn_img">{{ $market->city }}</span>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     @endif
                 @endforeach
@@ -311,11 +307,11 @@
         </div>
 
         <br>
-        <div class="container">
+        <div style="visibility: hidden" class="container">
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-3 col-xs-6 col-xs-offset-1">
 
-                    <a href="{{ route('stores.index') }}"><button class="btn first_shopping_btn">تمام فروشگاه ها</button></a>
+                    <a href="{{ route('stores.index') }}"><button class="btn first_shopping_btn">تمام مطب ها</button></a>
 
                 </div>
             </div>
@@ -365,7 +361,7 @@
         {{--<div class="row">--}}
             {{--<div class="col-xs-12 list_shopping_zhenic">--}}
 
-                {{--<button class="btn list_shopping_zhenic_btn"><img src="images/All-page-icone.png" class="All-page-icone" href="{{ route('stores.index') }}">&nbsp;&nbsp;<a href="{{ route('stores.index') }}" class="init">مشاهده لیست تمامی فروشگاه های ژنیک</a></button>--}}
+                {{--<button class="btn list_shopping_zhenic_btn"><img src="images/All-page-icone.png" class="All-page-icone" href="{{ route('stores.index') }}">&nbsp;&nbsp;<a href="{{ route('stores.index') }}" class="init">مشاهده لیست تمامی مطب های مهرکارت</a></button>--}}
 
             {{--</div>--}}
         {{--</div>--}}
@@ -393,7 +389,7 @@
                             <!--contact title in emailbox-->
                             <div class="row">
                                 <div class="col-xs-6 padding_social">
-                                    <h1 class="tNumber_title">شماره تماس ژنیک</h1>
+                                    <h1 class="tNumber_title">شماره تماس مهرکارت</h1>
                                 </div>
                                 <div class="col-xs-6 padding_social">
                                     <img src="images/telephone-icone.png" class="telephone-icone">
@@ -403,7 +399,7 @@
 
                             <div class="row">
                                 <div class="col-xs-6 padding_social">
-                                    <h1 class="tNumber_title">آدرس ژنیک</h1>
+                                    <h1 class="tNumber_title">آدرس مهرکارت</h1>
                                 </div>
                                 <div class="col-xs-6 padding_social">
                                     <img src="images/location-icone.png" class="telephone-icone">
@@ -414,7 +410,7 @@
 
                             <div class="row">
                                 <div class="col-xs-6 padding_social">
-                                    <h1 class="tNumber_title">اینستاگرام ژنیک</h1>
+                                    <h1 class="tNumber_title">اینستاگرام مهرکارت</h1>
                                 </div>
                                 <div class="col-xs-6 padding_social">
                                     <img src="images/instagram-icone.png" class="telephone-icone">
@@ -424,7 +420,7 @@
 
                             <div class="row">
                                 <div class="col-xs-6 padding_social">
-                                    <h1 class="tNumber_title">تلگرام ژنیک</h1>
+                                    <h1 class="tNumber_title">تلگرام مهرکارت</h1>
                                 </div>
                                 <div class="col-xs-6 padding_social">
                                     <img src="images/telegram-icone.png" class="telephone-icone">

@@ -1,7 +1,7 @@
 @extends('layouts.zhenicSite')
 
 @section('title')
-    ژنیک | خانه
+    مهرکارت | خانه
 @endsection
 
 @section('js2')
@@ -78,13 +78,13 @@
                     <div class="col-lg-4 col-md-4 col-xs-12">
                         <div class="btn-group col-xs-10 col-xs-offset-1">
                             <button type="button" class="btn shopping_img"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
-                            <button type="button" class="btn shopping">فروشگاه ها روی نقشه</button>
+                            <button type="button" class="btn shopping">مطب ها روی نقشه</button>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-xs-12">
                         <div class="btn-group col-xs-10 col-xs-offset-1">
                             <button type="button" class="btn android_img"><i class="fa fa-android" aria-hidden="true"></i></button>
-                            <button type="button" class="btn android">دانلود اپلیکیشن ژنیک</button>
+                            <button type="button" class="btn android">دانلود اپلیکیشن مهرکارت</button>
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                         <!--contact title in emailbox-->
                         <div class="row">
                             <div class="col-xs-6 padding_social">
-                                <h1 class="tNumber_title">شماره تماس ژنیک</h1>
+                                <h1 class="tNumber_title">شماره تماس مهرکارت</h1>
                             </div>
                             <div class="col-xs-6 padding_social">
                                 <img src="images/telephone-icone.png" class="telephone-icone">
@@ -124,7 +124,7 @@
 
                         <div class="row">
                             <div class="col-xs-6 padding_social">
-                                <h1 class="tNumber_title">آدرس ژنیک</h1>
+                                <h1 class="tNumber_title">آدرس مهرکارت</h1>
                             </div>
                             <div class="col-xs-6 padding_social">
                                 <img src="images/location-icone.png" class="telephone-icone">
@@ -135,7 +135,7 @@
 
                         <div class="row">
                             <div class="col-xs-6 padding_social">
-                                <h1 class="tNumber_title">اینستاگرام ژنیک</h1>
+                                <h1 class="tNumber_title">اینستاگرام مهرکارت</h1>
                             </div>
                             <div class="col-xs-6 padding_social">
                                 <img src="images/instagram-icone.png" class="telephone-icone">
@@ -145,7 +145,7 @@
 
                         <div class="row">
                             <div class="col-xs-6 padding_social">
-                                <h1 class="tNumber_title">تلگرام ژنیک</h1>
+                                <h1 class="tNumber_title">تلگرام مهرکارت</h1>
                             </div>
                             <div class="col-xs-6 padding_social">
                                 <img src="images/telegram-icone.png" class="telephone-icone">

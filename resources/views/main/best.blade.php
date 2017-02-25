@@ -1,7 +1,7 @@
 @extends('layouts.zhenicSite')
 
 @section('title')
-    ژنیک | فروشگاه های برتر
+    مهرکارت | مطب های برتر
 @endsection
 
 @section('js2')
@@ -80,13 +80,13 @@
                         <div class="col-lg-4 col-md-4 col-xs-12">
                             <div class="btn-group col-xs-10 col-xs-offset-1">
                                 <button type="button" class="btn shopping_img"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
-                                <button type="button" class="btn shopping">فروشگاه ها روی نقشه</button>
+                                <button type="button" class="btn shopping">مطب ها روی نقشه</button>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-xs-12">
                             <div class="btn-group col-xs-10 col-xs-offset-1">
                                 <button type="button" class="btn android_img"><i class="fa fa-android" aria-hidden="true"></i></button>
-                                <button type="button" class="btn android">دانلود اپلیکیشن ژنیک</button>
+                                <button type="button" class="btn android">دانلود اپلیکیشن مهرکارت</button>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                 <div class="row">
                     <div class="col-md-3 col-xs-6">
                         <div class="row">
-                            {!! Form::label('market_type', 'نوع فروشگاه', ['class'=>'button_name']) !!}
+                            {!! Form::label('market_type', 'نوع مطب', ['class'=>'button_name']) !!}
                         </div>
                         <div class="row dropdown">
                             {!! Form::select('market_type', ['0' => 'همه'] + $market_type, 0,['class'=>'btn dropdown-toggle btn_all']) !!}
@@ -144,7 +144,7 @@
                     </div>
 
                     <div class="col-md-3 col-md-offset-0 col-sm-3 col-sm-offset-0 col-xs-4 col-xs-offset-0">
-                        <label class="show_shop_title">نمایش برترین فروشگاه ها</label>
+                        <label class="show_shop_title">نمایش برترین مطب ها</label>
                     </div>
 
                     <div class="col-md-3 col-md-offset-1 col-xs-4 col-xs-offset-8">

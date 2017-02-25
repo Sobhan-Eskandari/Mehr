@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | تنظیمات
+    مهرکارت | تنظیمات
 @endsection
 
 @section('js2')
@@ -247,14 +247,14 @@
             </div>
             <div class="col-xs-2">
                 <li>
-                    {!! Form::label('delete_market', 'حذف فروشگاه', ['class'=>'with-square-checkbox']) !!}
+                    {!! Form::label('delete_market', 'حذف مطب', ['class'=>'with-square-checkbox']) !!}
                     {!! Form::checkbox('delete_market') !!}
                 </li>
 
             </div>
             <div class="col-xs-2">
                 <li>
-                    {!! Form::label('edit_market', 'ویرایش فروشگاه', ['class'=>'with-square-checkbox']) !!}
+                    {!! Form::label('edit_market', 'ویرایش مطب', ['class'=>'with-square-checkbox']) !!}
                     {!! Form::checkbox('edit_market') !!}
                 </li>
             </div>
@@ -292,7 +292,7 @@
             </div>
             <div class="col-xs-2">
                 <li>
-                    {!! Form::label('create_market', 'ایجاد فروشگاه', ['class'=>'with-square-checkbox']) !!}
+                    {!! Form::label('create_market', 'ایجاد مطب', ['class'=>'with-square-checkbox']) !!}
                     {!! Form::checkbox('create_market') !!}
                 </li>
 

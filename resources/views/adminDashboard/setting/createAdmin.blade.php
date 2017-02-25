@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | تنظیمات
+    مهرکارت | تنظیمات
 @endsection
 
 @section('js2')

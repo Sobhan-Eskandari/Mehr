@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | ایجاد فروشگاه
+    مهرکارت | ایجاد مطب
 @endsection
 
 @section('js2')
@@ -43,7 +43,7 @@
     <div class="padding_right">
         <div class="row">
             <div class="col-xs-12">
-                <h4 class="specification_title">مشخصات فروشگاه</h4>
+                <h4 class="specification_title">مشخصات مطب</h4>
                 @if(count($errors) > 0)
                     <ul>
                         @foreach($errors->all() as $error)
@@ -68,7 +68,7 @@
                 <div class="col-md-4 col-md-offset-0 col-xs-12 col-xs-offset-1">
                     <div class="form-group">
 
-                        {!! Form::label('نام فروشگاه', null, ['class' => 'name_shop']) !!}
+                        {!! Form::label('نام مطب', null, ['class' => 'name_shop']) !!}
                         {!! Form::text('market_name',null,['class'=>'form-control inpuColXs4 name_shop','id'=>'inpuColXs4','tabindex'=>'1']) !!}
 
                     </div>
@@ -140,14 +140,14 @@
 
                 <div class="col-md-4 col-md-offset-0 col-xs-12 input_box_shop pull-left">
                     <div class="form-group">
-                        {!! Form::label('market_tel', 'تلفن فروشگاه', ['class' => 'name_label']) !!}
+                        {!! Form::label('market_tel', 'تلفن مطب', ['class' => 'name_label']) !!}
                         {!! Form::text('market_tel', null, ['class'=>'form-control inputShoTell', 'id'=>'inputShopTell', 'tabindex'=>'8']) !!}
                     </div>
                 </div>
 
                 <div class="col-md-8 col-md-offset-0 col-xs-12 input_box_shop pull-right">
                     <div class="form-group">
-                        {!! Form::label('address', 'آدرس فروشگاه', ['class' => 'name_label']) !!}
+                        {!! Form::label('address', 'آدرس مطب', ['class' => 'name_label']) !!}
                         {!! Form::text('address',null,['class'=>'form-control inputShopAddress','id'=>'inputShopAddress','tabindex'=>'7']) !!}
                     </div>
                 </div>
@@ -158,7 +158,7 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="title_address_shop">فروشگاه را روی نقشه مشخص کنید :</h4>
+                    <h4 class="title_address_shop">مطب را روی نقشه مشخص کنید :</h4>
                 </div>
             </div>
 
@@ -226,10 +226,15 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="choose_shop_second_title">تصاویر فروشگاه را انتخاب کنید:</h4>
+                    <h4 class="choose_shop_second_title">تصاویر مطب را انتخاب کنید:</h4>
                 </div>
             </div>
 
+            @if (count($images) >= 1)
+                <img src="../../../marketsPhotos/{{ $images[0] }}" style="width: 100px;height: 100px">
+            @else
+                <img style="width: 100px;height: 100px" src="../../../images/cardImage.jpg">
+            @endif
             <div class="row">
                 <div class="col-md-3 col-md-offset-0 col-xs-5">
                     <label class="btn btn-default btn-file upload_btn">
@@ -245,7 +250,11 @@
             </div>
 
             {{--<br>--}}
-
+            @if (count($images) >= 2)
+                <img src="../../../marketsPhotos/{{ $images[1] }}" style="width: 100px;height: 100px">
+            @else
+                <img style="width: 100px;height: 100px" src="../../../images/cardImage.jpg">
+            @endif
             <div class="row">
                 <div class="col-md-3 col-md-offset-0 col-xs-5">
                     <label class="btn btn-default btn-file upload_btn">
@@ -260,7 +269,11 @@
                 </div>
             </div>
             {{--<br>--}}
-
+            @if (count($images) >= 3)
+                <img src="../../../marketsPhotos/{{ $images[2] }}" style="width: 100px;height: 100px">
+            @else
+                <img style="width: 100px;height: 100px" src="../../../images/cardImage.jpg">
+            @endif
             <div class="row">
                 <div class="col-md-3 col-md-offset-0 col-xs-5">
                     <label class="btn btn-default btn-file upload_btn">
@@ -275,15 +288,21 @@
                 </div>
             </div>
 
+
             {{--<br>--}}
             <br>
 
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="choose_shop_second_title">لوگوی فروشگاه را انتخاب کنید:</h4>
+                    <h4 class="choose_shop_second_title">لوگوی مطب را انتخاب کنید:</h4>
                 </div>
             </div>
 
+            @if (count($market->logo) >= 1)
+                <img src="../../../marketsPhotos/{{ $market->logo['address'] }}" style="width: 100px;height: 100px">
+            @else
+                <img style="width: 100px;height: 100px" src="../../../images/cardImage.jpg">
+            @endif
             <div class="row">
                 <div class="col-md-3 col-md-offset-0 col-xs-5">
                     <label class="btn btn-default btn-file upload_btn">
@@ -314,6 +333,7 @@
                     {!! Form::select('marketsCategories[]', $marketCategories , $market->mategories->pluck('id')->toArray(),['class'=>'selectpicker','multiple','tabindex' =>'1','data-live-search'=>'true']) !!}
 
                 </div>
+                <br>
                 <div class="row">
                     <label>تعرفه ها</label>
                 </div>
@@ -341,7 +361,7 @@
                 <div class="col-md-4 col-md-offset-0 col-xs-6 kind_shop">
 
                     <div class="row">
-                        <label class="country_side">نوع فروشگاه</label>
+                        <label class="country_side">نوع مطب</label>
                     </div>
                     <div class="row dropdown">
                         {!! Form::select('market_type', ['0'=>'معمولی','1'=>'ویژه'], null,['class'=>'selectpicker','tabindex' =>'16']) !!}
@@ -534,7 +554,7 @@
             <br>
             <div class="row">
                 <div class="col-xs-12 padding_record_btn">
-                    {!! Form::submit('ثبت فروشگاه ',['class'=>'btn record_btn','tabindex' =>'32']) !!}
+                    {!! Form::submit('ثبت مطب ',['class'=>'btn record_btn','tabindex' =>'32']) !!}
                     {{--<button class="btn record_btn"></button>--}}
                 </div>
             </div>

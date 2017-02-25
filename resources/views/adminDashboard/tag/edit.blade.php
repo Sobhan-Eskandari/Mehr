@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | دسته بندی سیستمی
+    مهرکارت | دسته بندی سیستمی
 @endsection
 
 @section('pms')

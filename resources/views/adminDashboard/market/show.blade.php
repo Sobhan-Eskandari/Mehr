@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | نمایش فروشگاه
+    مهرکارت | نمایش مطب
 @endsection
 
 @section('js2')
@@ -43,7 +43,7 @@
     <div class="padding_right">
         <div class="row">
             <div class="col-xs-12">
-                <h4 class="specification_title">مشخصات فروشگاه</h4>
+                <h4 class="specification_title">مشخصات مطب</h4>
             </div>
         </div>
 
@@ -60,7 +60,7 @@
                 <div class="col-md-4 col-md-offset-0 col-xs-12 col-xs-offset-1">
                     <div class="form-group">
 
-                        {!! Form::label('نام فروشگاه', null, ['class' => 'name_shop']) !!}
+                        {!! Form::label('نام مطب', null, ['class' => 'name_shop']) !!}
                         {!! Form::text('market_name',null,['class'=>'form-control inpuColXs4 name_shop','id'=>'inpuColXs4','tabindex'=>'1','readonly']) !!}
 
                     </div>
@@ -132,14 +132,14 @@
 
                 <div class="col-md-4 col-md-offset-0 col-xs-12 input_box_shop pull-left">
                     <div class="form-group">
-                        {!! Form::label('market_tel', 'تلفن فروشگاه', ['class' => 'name_label']) !!}
+                        {!! Form::label('market_tel', 'تلفن مطب', ['class' => 'name_label']) !!}
                         {!! Form::text('market_tel', null, ['class'=>'form-control inputShoTell', 'id'=>'inputShopTell', 'tabindex'=>'8','readonly']) !!}
                     </div>
                 </div>
 
                 <div class="col-md-8 col-md-offset-0 col-xs-12 input_box_shop pull-right">
                     <div class="form-group">
-                        {!! Form::label('address', 'آدرس فروشگاه', ['class' => 'name_label']) !!}
+                        {!! Form::label('address', 'آدرس مطب', ['class' => 'name_label']) !!}
                         {!! Form::text('address',null,['class'=>'form-control inputShopAddress','id'=>'inputShopAddress','tabindex'=>'7','readonly']) !!}
                     </div>
                 </div>
@@ -150,7 +150,7 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="title_address_shop">فروشگاه را روی نقشه مشخص کنید :</h4>
+                    <h4 class="title_address_shop">مطب را روی نقشه مشخص کنید :</h4>
                 </div>
             </div>
 
@@ -218,19 +218,19 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="choose_shop_second_title">تصاویر فروشگاه </h4>
+                    <h4 class="choose_shop_second_title">تصاویر مطب </h4>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <img class="shop_img" src="../marketsPhotos/{{$market->photos[0]->address}}" width="30%" height="200px">
+                    <img class="shop_img" src="../marketsPhotos/{{ count($market->photos) >= 1 ? $market->photos[0]->address : 'cardImage.jpg' }}" width="30%" height="200px">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <img class="shop_img" src="../marketsPhotos/{{$market->photos[1]->address}}" width="30%" height="200px">
+                    <img class="shop_img" src="../marketsPhotos/{{ count($market->photos) >= 2 ? $market->photos[1]->address : 'cardImage.jpg' }}" width="30%" height="200px">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <img class="shop_img" src="../marketsPhotos/{{$market->photos[2]->address}}" width="30%" height="200px">
+                    <img class="shop_img" src="../marketsPhotos/{{ count($market->photos) >= 3 ? $market->photos[2]->address : 'cardImage.jpg' }}" width="30%" height="200px">
                 </div>
             </div>
 
@@ -239,10 +239,10 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="choose_shop_second_title">لوگوی فروشگاه</h4>
+                    <h4 class="choose_shop_second_title">لوگوی مطب</h4>
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
-                            <img class="shop_img" src="../marketsPhotos/{{$market->logo->address}}" width="30%" height="200px">
+                            <img class="shop_img" src="../marketsPhotos/{{ count($market->logo) > 0 ? $market->logo->address : 'cardImage.jpg' }}" width="30%" height="200px">
                         </div>
                     </div>
                 </div>
@@ -289,7 +289,7 @@
                 <div class="col-md-4 col-md-offset-0 col-xs-6 kind_shop">
 
                     <div class="row">
-                        <label class="country_side">نوع فروشگاه</label>
+                        <label class="country_side">نوع مطب</label>
                     </div>
                     <div class="row dropdown">
                         {!! Form::text('market_type',      $market->market_type = 1 ? 'ویژه' : 'معمولی',['class'=>'form-control inpuColXs4','tabindex' =>'16','readonly']) !!}
@@ -495,7 +495,7 @@
             <br>
             {{--<div class="row">--}}
                 {{--<div class="col-xs-12 padding_record_btn">--}}
-                    {{--{!! Form::submit('ثبت فروشگاه ',['class'=>'btn record_btn','tabindex' =>'32']) !!}--}}
+                    {{--{!! Form::submit('ثبت مطب ',['class'=>'btn record_btn','tabindex' =>'32']) !!}--}}
                     {{--<button class="btn record_btn"></button>--}}
                 {{--</div>--}}
             {{--</div>--}}

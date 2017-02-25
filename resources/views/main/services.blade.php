@@ -1,7 +1,7 @@
 @extends('layouts.zhenicSite')
 
 @section('title')
-    ژنیک | خدمات ژنیک
+    مهرکارت | خدمات مهرکارت
 @endsection
 
 @section('js2')
@@ -26,7 +26,7 @@
             <div id="service_title" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <!------------ Detail of Service ------------>
                 <img src="../images/takhfif-icone.png" class="img-responsive">
-                <h2>تخفیفات ویژه ژنیک</h2>
+                <h2>تخفیفات ویژه مهرکارت</h2>
                 <br>
                 <p>ما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماست</p>
                 <h3>کار ما فروش قالب نیست ما تجربیات دیجیتال خلق میکنیم</h3>
@@ -55,7 +55,7 @@
                 <hr class="hr_service">
             </div>
             <div class="col-xs-4">
-                <h1 class="service_title">خدمات ژنیک</h1>
+                <h1 class="service_title">خدمات مهرکارت</h1>
             </div>
             <div class="col-xs-4 top">
                 <hr class="hr_service">
@@ -73,7 +73,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -85,7 +85,7 @@
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>1]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -104,7 +104,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -116,7 +116,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>3]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -134,7 +134,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -146,7 +146,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>2]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -164,7 +164,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -176,7 +176,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>1]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -197,7 +197,7 @@
             <div id="service_title" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <!------------ Detail of Service ------------>
                 <img src="../images/takhfif-icone.png" class="img-responsive">
-                <h2>تخفیفات ویژه ژنیک</h2>
+                <h2>تخفیفات ویژه مهرکارت</h2>
                 <br>
                 <p>ما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماست</p>
                 <h3>کار ما فروش قالب نیست ما تجربیات دیجیتال خلق میکنیم</h3>
@@ -226,7 +226,7 @@
                 <hr class="hr_service">
             </div>
             <div class="col-xs-4">
-                <h1 class="service_title">خدمات ژنیک</h1>
+                <h1 class="service_title">خدمات مهرکارت</h1>
             </div>
             <div class="col-xs-4 top">
                 <hr class="hr_service">
@@ -244,7 +244,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -256,7 +256,7 @@
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>1]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -275,7 +275,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -287,7 +287,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>3]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -305,7 +305,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -317,7 +317,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>2]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -335,7 +335,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -347,7 +347,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>1]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -368,7 +368,7 @@
             <div id="service_title" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <!------------ Detail of Service ------------>
                 <img src="../images/takhfif-icone.png" class="img-responsive">
-                <h2>تخفیفات ویژه ژنیک</h2>
+                <h2>تخفیفات ویژه مهرکارت</h2>
                 <br>
                 <p>ما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماست</p>
                 <h3>کار ما فروش قالب نیست ما تجربیات دیجیتال خلق میکنیم</h3>
@@ -397,7 +397,7 @@
                 <hr class="hr_service">
             </div>
             <div class="col-xs-4">
-                <h1 class="service_title">خدمات ژنیک</h1>
+                <h1 class="service_title">خدمات مهرکارت</h1>
             </div>
             <div class="col-xs-4 top">
                 <hr class="hr_service">
@@ -415,7 +415,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -427,7 +427,7 @@
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>1]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -446,7 +446,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -458,7 +458,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>3]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -476,7 +476,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -488,7 +488,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>2]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -506,7 +506,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -518,7 +518,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>1]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -539,7 +539,7 @@
             <div id="service_title" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <!------------ Detail of Service ------------>
                 <img src="../images/takhfif-icone.png" class="img-responsive">
-                <h2>تخفیفات ویژه ژنیک</h2>
+                <h2>تخفیفات ویژه مهرکارت</h2>
                 <br>
                 <p>ما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماستما یک شرکت ارائه کننده تمامی خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای , با تجربه و قابل اعتماد هستند که این امر باعث شده تا در 7 سال اخیر برترین برند های کشور پروژه های خود را به ما بسپارند.تخصص ما ایجاد سایتهای شخصی و تجاری , رابط کاربری , اپلیکیشن ها و هر نوع خدمات دیجیتال است.اگر به دنبال برنامه نویسی با کیفیت هستید ما برای انجام آن آماده ایم زیرا این فقط شغل ما نیست بلکه زندگی ماست</p>
                 <h3>کار ما فروش قالب نیست ما تجربیات دیجیتال خلق میکنیم</h3>
@@ -568,7 +568,7 @@
                 <hr class="hr_service">
             </div>
             <div class="col-xs-4">
-                <h1 class="service_title">خدمات ژنیک</h1>
+                <h1 class="service_title">خدمات مهرکارت</h1>
             </div>
             <div class="col-xs-4 top">
                 <hr class="hr_service">
@@ -586,7 +586,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -598,7 +598,7 @@
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>1]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -617,7 +617,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -629,7 +629,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>3]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -647,7 +647,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -659,7 +659,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>2]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>
@@ -677,7 +677,7 @@
                 <div class="row upper_hover">
                     <div class="col-xs-8 col-xs-offset-2 discount_box one">
                         <img src="../images/takhfif-icone.png" class="discount_img">
-                        <h2 class="discount_title">تخفیفات ویژه ژنیک</h2>
+                        <h2 class="discount_title">تخفیفات ویژه مهرکارت</h2>
                     </div>
                 </div>
 
@@ -689,7 +689,7 @@
                         <div class="row ">
                             <div class="col-xs-8 col-xs-offset-2 second_box">
                                 <img src="../images/white-icone.png" class="discount_img_hover hidden-xs">
-                                <h4 class="discount_title_hover">تخفیفات ویژه ژنیک</h4>
+                                <h4 class="discount_title_hover">تخفیفات ویژه مهرکارت</h4>
                                 <h4 class="moreExplain">ما یک شرکت ارایه کننده خدمات مبتنی بر وب در تهران هستیم و اعضای تیم ما در تخصص خود حرفه ای،با تجربه و قابل اعتماد هستند</h4>
                                 <a href="{{ route('services', ['id'=>1]) }}"><button class="details_btn btn">جزییات بیشتر</button></a>
                             </div>

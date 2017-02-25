@@ -9,11 +9,12 @@ sideBar
     padding-left: 0;
     margin-top:0;
     width: 13%;
-    text-align: center;
+    text-align: right;
 }
 .admin_side_title.left_space{
     padding-left: 0;
     margin-right: -5.4%;
+    text-align: right;
 }
 .admin_side_title{
     font-size: 15px;
@@ -38,7 +39,7 @@ sideBar
     font-weight: 200;
 }
 h5.zhenic_title,h5.admin_side_title{
-    text-align: center;
+    text-align: right;
     color: white;
     margin: 0;
 }

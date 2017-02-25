@@ -1,7 +1,7 @@
 @extends('layouts.zhenicSite')
 
 @section('title')
-    ژنیک | ارسال پیامک
+    مهرکارت | ارسال پیامک
 @endsection
 
 @section('js2')

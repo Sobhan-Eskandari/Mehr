@@ -68,9 +68,10 @@
                         <li class="main_navbar"><a href="@yield('contactUs')" class="@yield('contactActive')">تماس با ما</a></li>
                         <li class="main_navbar"><a href="{{ route('aboutUs') }}" class="@yield('aboutActive')">درباره ما</a></li>
                         <li class="main_navbar"><a href="{{ route('News.index') }}" class="@yield('newsActive')">اخبار</a></li>
-                        <li class="main_navbar"><a href="{{ route('stores.index') }}" class="@yield('storeActive')">فروشگاه ها</a></li>
+                        <li class="main_navbar"><a href="#" class="@yield('storeActive')">مطب ها</a></li>
                         <li class="main_navbar"><a href="{{ route('homePage') }}" class="@yield('homeActive')">خانه</a></li>
-                        <li class="enter_btn pull-right"><a class="navbar-brand pull-right" href="{{ route('login') }}">ورود</a></li>
+                        <li class="main_navbar"><a href="{{ route('homePage') }}" class="@yield('homeActive')"></a></li>
+                        {{--<li class="enter_btn pull-right"><a class="navbar-brand pull-right" href="{{ route('login') }}">ورود</a></li>--}}
                     </ul>
 
 
@@ -187,7 +188,7 @@
                         <ul class="list-group">
                             <li class="list-group-item"><h4 class="menu_footer menu_title_footer_right">منو ها</h4></li>
                             <li class="list-group-item"><a href="{{ route('homePage') }}"><h5 class="menu_footer">خانه</h5></a></li>
-                            <li class="list-group-item"><a href="{{ route('stores.index') }}"><h5 class="menu_footer">فروشگاه ها</h5></a></li>
+                            <li class="list-group-item"><a href="#"><h5 class="menu_footer">مطب ها</h5></a></li>
                             <li class="list-group-item"><a href="{{ route('aboutUs') }}"><h5 class="menu_footer">درباره ما</h5></a></li>
                             <li class="list-group-item"><a href="{{ route('contactUs') }}"><h5 class="menu_footer">تماس با ما</h5></a></li>
                             <li class="list-group-item"><a href="{{ route('login') }}"><h5 class="menu_footer">ورود</h5></a></li>

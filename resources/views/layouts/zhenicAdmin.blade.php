@@ -35,7 +35,7 @@
             <!--menu_bar-->
             <div class="row menu_shadow">
                 <div class="col-xs-4 pull-right home_top">
-                    <h4><a href="{{ route('homePage') }}" class="zhenic_menubar"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;ژنيک</a></h4>
+                    <h4><a href="{{ route('homePage') }}" class="zhenic_menubar"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;مهرکارت</a></h4>
                 </div>
 
                 <div class="col-xs-4 pull-left exit_up">
@@ -64,12 +64,12 @@
 
         <!--sideBar-->
         <div class="col-xs-2 admin_sidebar pull-right">
-            <h5 class="zhenic_title">ژنيک</h5>
-            <a href="{{ route('markets.index') }}"><h5 class="admin_side_title @yield('markets')"><i class="fa fa-file-text-o set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">فروشگاه ها</span></h5></a>
+            <h5 class="zhenic_title">مهرکارت</h5>
+            <a href="{{ route('markets.index') }}"><h5 class="admin_side_title @yield('markets')"><i class="fa fa-file-text-o set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">مطب ها</span></h5></a>
 
             <a href="{{ route('customers.index') }}"><h5 class="admin_side_title @yield('customers')"><i class="fa fa-user set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">مشتری ها</span></h5></a>
 
-            <a href="{{ route('messages.index') }}"><h5 class="admin_side_title @yield('messages')"><i class="fa fa-comments set_fa pull-right" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;پيام ها&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge pull-left">{{ \App\Message::whereRead(0)->count() }}</span></h5></a>
+            <a href="{{ route('messages.index') }}"><h5 class="admin_side_title @yield('messages')"><i class="fa fa-comments set_fa pull-right" aria-hidden="true"></i>پيام ها&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge pull-left">{{ \App\Message::whereRead(0)->count() }}</span></h5></a>
 
             <a href="{{ route('News.DashIndex') }}"><h5 class="admin_side_title @yield('announcement')"><i class="fa fa-bullhorn set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">اخبار</span></h5></a>
 
@@ -77,7 +77,7 @@
 
             <a href="{{ route('settings.index') }}"><h5 class="admin_side_title @yield('settings')"><i class="fa fa-cogs set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">تنظيمات</span></h5></a>
 
-            <a href="{{route('marketCategories.index')}}"><h5 class="admin_side_title left_space @yield('categories')"><i class="fa fa-th-list set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">دسته بندی فروشگاه</span></h5></a>
+            <a href="{{route('marketCategories.index')}}"><h5 class="admin_side_title left_space @yield('categories')"><i class="fa fa-th-list set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">دسته بندی مطب</span></h5></a>
 
             <a href="{{route('systemicCategories.index')}}"><h5 class="admin_side_title left_space @yield('systemic')"><i class="fa fa-th-list set_fa pull-right xs_pr" aria-hidden="true"></i><span class="hidden-xs">دسته بندی سیستمی</span></h5></a>
 

@@ -85,7 +85,7 @@
     </div>
 
     <div class="row backUp_box_padding second">
-        <h3>جدول فروشگاه ها</h3>
+        <h3>جدول مطب ها</h3>
         <br>
         <div class="col-xs-12 backUp_box">
             <form action="{{ URL::to('uploadBackupMarkets') }}" method="post" enctype="multipart/form-data">

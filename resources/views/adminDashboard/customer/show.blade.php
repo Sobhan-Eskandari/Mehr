@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | نمایش مشتری
+    مهرکارت | نمایش مشتری
 @endsection
 
 @section('js2')
@@ -73,7 +73,7 @@
             <div class="col-md-3 col-md-offset-1 col-sm-6 col-xs-11  level_choose_btn">
                 <div class="row">
                     {!! Form::label('role', 'نوع مشتری', ['class'=>'kind_label']) !!}
-                    {!! Form::text('role', $user->role == 0 ? 'مشتری' : 'صاحب فروشگاه', ['class'=>'form-control inputName', 'id'=>'inputName', 'tabindex'=>'1', 'readonly']) !!}
+                    {!! Form::text('role', $user->role == 0 ? 'مشتری' : 'صاحب مطب', ['class'=>'form-control inputName', 'id'=>'inputName', 'tabindex'=>'1', 'readonly']) !!}
                 </div>
             </div>
 
@@ -217,7 +217,7 @@
         <div class="row user_info_row">
             <div class="col-md-4 col-md-offset-0 col-xs-12 input_box_user pull-right">
                 <div class="form-group">
-                    {!! Form::label('zhenic_card_number', 'شماره ژنیک کارت', ['class' => 'name_label']) !!}
+                    {!! Form::label('zhenic_card_number', 'شماره مهرکارت کارت', ['class' => 'name_label']) !!}
                     {!! Form::text('zhenic_card_number', null, ['class'=>'form-control inputAccountBank', 'id'=>'inputAccountBank', 'tabindex'=>'20', 'readonly']) !!}
                 </div>
             </div>

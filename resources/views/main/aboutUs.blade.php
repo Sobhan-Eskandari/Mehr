@@ -1,7 +1,7 @@
 @extends('layouts.zhenicSite')
 
 @section('title')
-    ژنیک | دباره ما
+    مهرکارت | دباره ما
 @endsection
 
 @section('js2')

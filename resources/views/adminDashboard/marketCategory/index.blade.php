@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | دسته بندی سیستمی
+    مهرکارت | دسته بندی سیستمی
 @endsection
 
 @section('pms')
@@ -65,7 +65,7 @@
                         </ul>
                     @endif
                     <div class="form-group">
-                        <label><h4>دسته بندی فروشگاه:</h4></label>
+                        <label><h4>دسته بندی مطب:</h4></label>
                         <input class="form-control inputCategory" type="text" id="inputCategory" tabindex="1" name="name">
                     </div>
                 </div>

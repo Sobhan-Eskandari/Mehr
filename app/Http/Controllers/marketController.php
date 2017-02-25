@@ -325,7 +325,8 @@ class marketController extends Controller
                 $images[] = $photo->address;
             }
         }
-        // dd($images);
+//         dd($images);
+//        dd($market->logo['address']);
         return view('adminDashboard.market.edit',compact('user','market','states','marketCategories','systemicCategories','regTypes','tags','images'));
     }
     public function searchSellerEdit(Request $request,$marketId){
@@ -422,7 +423,7 @@ class marketController extends Controller
         }
 
         $photos = $market->photos;
-
+//        dd($photos);
 	    if($file = $request->file('img1')){
             if(count($photos) != 0 && isset($photos[0])){
                 File::delete('marketsPhotos/' . $photos[0]->address);

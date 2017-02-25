@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | ساخت مشتری
+    مهرکارت | ساخت مشتری
 @endsection
 
 @section('js2')
@@ -90,7 +90,7 @@
                         {!! Form::label('role', 'نوع مشتری', ['class'=>'kind_label']) !!}
                     </div>
                     <div class="row dropdown">
-                        {!! Form::select('role', array(0 => 'مشتری', 1 => 'صاحب فروشگاه'), 0, ['class'=>'selectpicker', 'tabindex'=>'6']) !!}
+                        {!! Form::select('role', array(0 => 'مشتری', 1 => 'صاحب مطب'), 0, ['class'=>'selectpicker', 'tabindex'=>'6']) !!}
                     </div>
                 </div>
 

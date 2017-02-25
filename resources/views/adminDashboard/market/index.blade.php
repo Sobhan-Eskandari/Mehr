@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | فروشگاه ها
+    مهرکارت | مطب ها
 @endsection
 
 @section('js2')
@@ -52,7 +52,7 @@
     {{--<div class="padding_right">--}}
         {{--<div class="row">--}}
             {{--<div class="col-xs-12">--}}
-                {{--<h4 class="specification_title">جستجوی فروشگاه</h4>--}}
+                {{--<h4 class="specification_title">جستجوی مطب</h4>--}}
             {{--</div>--}}
         {{--</div>--}}
 
@@ -77,7 +77,7 @@
         {{--<br>--}}
         {{--<div class="row">--}}
             {{--<div class="col-xs-12 padding_record_btn">--}}
-                {{--<button class="btn record_btn">ثبت فروشگاه </button>--}}
+                {{--<button class="btn record_btn">ثبت مطب </button>--}}
                 {{--{!! Form::submit('جستجو',['class'=>'btn record_btn']) !!}--}}
 
             {{--</div>--}}
@@ -91,10 +91,10 @@
 
     <div class="row margin_right_2nd_title">
         <div class="col-md-3 col-md-offset-0 col-xs-4 pull-left">
-           <a href="{{route('searchSeller')}}"><button class="btn adv_btn pull-left">ایجاد فروشگاه&nbsp;<i class="fa fa-plus" aria-hidden="true"></i></button></a>
+           <a href="{{route('searchSeller')}}"><button class="btn adv_btn pull-left">ایجاد مطب&nbsp;<i class="fa fa-plus" aria-hidden="true"></i></button></a>
         </div>
         <div class="col-md-3 col-md-offset-0 col-xs-4 pull-right">
-            <h4 class="list_title">لیست فروشگاه ها</h4>
+            <h4 class="list_title">لیست مطب ها</h4>
         </div>
 
     </div>
@@ -104,10 +104,10 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>عنوان فروشگاه</th>
+                    <th>عنوان مطب</th>
                     <th>تاریخ ایجاد</th>
-                    <th>نوع فروشگاه</th>
-                    <th>مالک فروشگاه</th>
+                    <th>نوع مطب</th>
+                    <th>مالک مطب</th>
                     <th>&nbsp;</th>
                 </tr>
                 </thead>

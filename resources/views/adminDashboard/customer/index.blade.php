@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | مشتریان
+    مهرکارت | مشتریان
 @endsection
 
 @section('js2')
@@ -115,7 +115,7 @@
                             <td><img src="images/icone.png" class="icone_user">{{ $user->first_name }} {{ $user->last_name }}</td>
                             <td class="upper_td">{{ $user->cell_1 }}</td>
                             <td class="upper_td">{{ $user->address }}</td>
-                            <td class="upper_td">{{ $user->role == 0 ? 'مشتری' : 'صاحب فروشگاه' }}</td>
+                            <td class="upper_td">{{ $user->role == 0 ? 'مشتری' : 'صاحب مطب' }}</td>
                             <td class="upper_td">
                                 <div class="btn-group">
                                     <a class=" dropdown-toggle" data-toggle="dropdown" href="#">

@@ -1,7 +1,7 @@
 @extends('layouts.zhenicSite')
 
 @section('title')
-    ژنیک | سوالات متداول
+    مهرکارت | سوالات متداول
 @endsection
 
 @section('js2')

@@ -1,7 +1,7 @@
 @extends('layouts.zhenicSite')
 
 @section('title')
-    ژنیک | {{ $selectedMarket->market_name }}
+    مهرکارت | {{ $selectedMarket->market_name }}
 @endsection
 
 @section('js2')
@@ -189,7 +189,7 @@
         {{--<!--shopping title-->--}}
         {{--<div class="container">--}}
             {{--<div class="row">--}}
-                {{--<h2 class="best_title">فروشگاه های برتر ما</h2>--}}
+                {{--<h2 class="best_title">مطب های برتر ما</h2>--}}
             {{--</div>--}}
         {{--</div>--}}
 
@@ -238,7 +238,7 @@
                 {{--<div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-3 col-xs-6 col-xs-offset-1">--}}
 
                     {{--<a href="{{ route('BestMarkets') }}"><button class="btn first_shopping_btn">--}}
-                        {{--فروشگاه های برتر--}}
+                        {{--مطب های برتر--}}
                     {{--</button></a>--}}
 
                 {{--</div>--}}

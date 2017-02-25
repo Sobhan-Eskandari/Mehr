@@ -348,6 +348,23 @@ Route::get('/site-info', function() {
     return $response;
 });
 
+Route::get('/faq-json', function() {
+    $faqs = \App\FAQ::all();
+//    dd($faqs[0]);
+    foreach ($faqs as $key => $value){
+        $faqs[$key]['question'] = strip_tags($value['question']);
+        $faqs[$key]['answer'] = strip_tags($value['answer']);
+    }
+
+    $response =  Response::json(array(
+        'error' => false,
+        'news' => $faqs,
+        'status_code' => 200
+    ));
+
+    return $response;
+});
+
 //Route::get('sendSms/{number}','sms@sendSms')->name('sendSms');
 //////sms
 

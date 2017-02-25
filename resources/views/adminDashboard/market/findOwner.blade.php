@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    ژنیک | ایجاد فروشگاه
+    مهرکارت | ایجاد مطب
 @endsection
 
 @section('js2')
@@ -68,7 +68,7 @@
                 <br>
                 <div class="row">
                     <div class="col-xs-12 padding_record_btn">
-                        {{--<button class="btn record_btn">ثبت فروشگاه </button>--}}
+                        {{--<button class="btn record_btn">ثبت مطب </button>--}}
                         {!! Form::submit('جستجو',['class'=>'btn record_btn']) !!}
 
                     </div>
