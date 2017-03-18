@@ -73,6 +73,7 @@ class marketRequest extends FormRequest
             'market_type.required' => 'وارد کردن نوع فروشگاه اجباری است',
             'contract_end.required' => 'وارد کردن تاریخ پایان قرارداد اجباری است',
             'contract_start.required' => 'وارد کردن تاریخ شروع قرارداد اجباری است',
+            'tariff.required' => 'انتخاب تعرفه اجباری است',
         ];
     }
 }

@@ -64,7 +64,7 @@
 
         <!--sideBar-->
         <div class="col-xs-2 admin_sidebar pull-right">
-            <h5 class="zhenic_title">مهرکارت</h5>
+            <h5 class="zhenic_title" style="text-align: center;">مهرکارت</h5>
             <a href="{{ route('markets.index') }}"><h5 class="admin_side_title @yield('markets')"><i class="fa fa-file-text-o set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">مطب ها</span></h5></a>
 
             <a href="{{ route('customers.index') }}"><h5 class="admin_side_title @yield('customers')"><i class="fa fa-user set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">مشتری ها</span></h5></a>

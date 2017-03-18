@@ -222,65 +222,8 @@ Route::get('send/{number}','sms@sms')->name('sms');
 Route::post('sendSms','sms@sendSms')->name('sendSms');
 
 Route::get('/json-market/{id?}', function($id = null) {
-    if ($id == null) {
-        if (empty($_GET['head']) && empty($_GET['tail'])){
-            $markets = Market::where('state', 'like', "%{$_GET['state']}%")
-                ->where('city', 'like', "%{$_GET['city']}%")
-                ->get([
-                    'id',
-                    'market_name',
-                    'state',
-                    'city',
-                    'address',
-                    'zip',
-                    'longitude',
-                    'latitude',
-                    'normal_percentage',
-                    'special_percentage',
-                    'special_percentage_start',
-                    'special_percentage_end',
-                    'text',
-                    'market_type',
-                ]);
-        } else {
-            $markets = Market::where('state', 'like', "%{$_GET['state']}%")
-                ->where('city', 'like', "%{$_GET['city']}%")
-                ->whereBetween('normal_percentage', [$_GET['head'], $_GET['tail']])
-                ->get([
-                    'id',
-                    'market_name',
-                    'state',
-                    'city',
-                    'address',
-                    'zip',
-                    'longitude',
-                    'latitude',
-                    'normal_percentage',
-                    'special_percentage',
-                    'special_percentage_start',
-                    'special_percentage_end',
-                    'text',
-                    'market_type',
-                ]);
-        }
-        $photos = [];
-        for($i = 0; $i < count($markets); $i++){
-            foreach ($markets[$i]->photos as $photo){
-                $photos[] = "http://khanefile.ir/marketsPhotos/" . $photo->address;
-            }
-            if(count($photos) < 3){
-	            for($j = count($photos); $j < 3; $j++){
-	                $photos[$j] = '';
-	            }
-            }
-            $markets[$i]['photos_address'] = $photos;
-            $photos = [];
-        }
-        foreach ($markets as $market){
-            $market['text'] = strip_tags($market['text']);
-        }
-    } else {
-        $markets = Market::findOrFail($id, [
+//    if ($id == null) {
+        $markets = Market::get([
             'id',
             'market_name',
             'state',
@@ -296,17 +239,78 @@ Route::get('/json-market/{id?}', function($id = null) {
             'text',
             'market_type',
         ]);
-        foreach ($markets->photos as $photo){
-            $photos[] = "http://khanefile.ir/marketsPhotos/" . $photo->address;
+
+        foreach ($markets as $market){
+            is_null($market->zip) ? $market->zip = '' : $market->zip;
+            is_null($market->normal_percentage) ? $market->normal_percentage = '' : $market->normal_percentage;
+            is_null($market->special_percentage) ? $market->special_percentage = '' : $market->special_percentage;
+            is_null($market->special_percentage_start) ? $market->special_percentage_start = '' : $market->special_percentage_start;
+            is_null($market->special_percentage_end) ? $market->special_percentage_end = '' : $market->special_percentage_end;
         }
-        if(count($photos) < 3){
-            for($j = count($photos); $j < 3; $j++){
-                $photos[$j] = '';
+
+        $tariffCategories = [];
+        $photos = [];
+
+        for($i = 0; $i < count($markets); $i++){
+            foreach ($markets[$i]->photos as $photo){
+                $photos[] = "http://khanefile.ir/marketsPhotos/" . $photo->address;
             }
+            if(count($photos) < 3){
+	            for($j = count($photos); $j < 3; $j++){
+	                $photos[$j] = 'http://khanefile.ir/images/noImage.png';
+	            }
+            }
+            $markets[$i]['photos_address'] = $photos;
+            $photos = [];
+
+            foreach ($markets[$i]->tariff2s as $tariff2) {
+                $tariffCategories[] = $tariff2->tariffs;
+            }
+            $markets[$i]['category'] = $tariffCategories;
+            $tariffCategories = [];
+
         }
-        $markets['photos_address'] = $photos;
-        $markets['text'] = strip_tags($markets['text']);
-    }
+        foreach ($markets as $market){
+            $market['text'] = strip_tags($market['text']);
+        }
+//    }
+//    else {
+//        $markets = Market::findOrFail($id, [
+//            'id',
+//            'market_name',
+//            'state',
+//            'city',
+//            'address',
+//            'zip',
+//            'longitude',
+//            'latitude',
+//            'normal_percentage',
+//            'special_percentage',
+//            'special_percentage_start',
+//            'special_percentage_end',
+//            'text',
+//            'market_type',
+//        ]);
+//
+//        is_null($markets->zip) ? $markets->zip = '' : $markets->zip;
+//        is_null($markets->normal_percentage) ? $markets->normal_percentage = '' : $markets->normal_percentage;
+//        is_null($markets->special_percentage) ? $markets->special_percentage = '' : $markets->special_percentage;
+//        is_null($markets->special_percentage_start) ? $markets->special_percentage_start = '' : $markets->special_percentage_start;
+//        is_null($markets->special_percentage_end) ? $markets->special_percentage_end = '' : $markets->special_percentage_end;
+//
+//        $photos = [];
+//        $markets->tariff2s;
+//        foreach ($markets->photos as $photo){
+//            $photos[] = "http://khanefile.ir/marketsPhotos/" . $photo->address;
+//        }
+//        if(count($photos) < 3){
+//            for($j = count($photos); $j < 3; $j++){
+//                $photos[$j] = '';
+//            }
+//        }
+//        $markets['photos_address'] = $photos;
+//        $markets['text'] = strip_tags($markets['text']);
+//    }
     $response =  Response::json(array(
         'error' => false,
         'markets' => $markets,
@@ -337,7 +341,7 @@ Route::get('/json-news/{id?}', function($id = null) {
 
 Route::get('/site-info', function() {
     $info = \App\SiteInfo::findOrFail(1);
-    $info['faq'] = strip_tags($info['faq']);
+    $info['about'] = strip_tags($info['about']);
 
     $response =  Response::json(array(
         'error' => false,

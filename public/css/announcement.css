@@ -52,7 +52,7 @@ sideBar
     font-weight: 200;
 }
 h5.zhenic_title,h5.admin_side_title{
-    text-align: center;
+    text-align: right;
     color: white;
     margin: 0;
 }
@@ -113,6 +113,7 @@ activate menu bar
 .admin_side_title.active{
     background-color: #0198d4;
     opacity: 0.5;
+
 }
 
 /******************

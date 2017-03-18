@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    مهرکارت | نوع عضویت
+    مهرکارت | دسته بندی تعرفه
 @endsection
 
 @section('pms')
@@ -19,7 +19,7 @@
     <div class="row downer_from_menu">
 
         <div class="col-lg-7 col-md-6 col-xs-8 pdding_left">
-            <label><h4>دسته بندی تعرفه ها:</h4></label>
+            <label><h4>تعرفه ها:</h4></label>
             <table class="table table-bordered">
 
                 <tbody>

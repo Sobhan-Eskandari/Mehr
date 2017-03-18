@@ -27,4 +27,11 @@ class TariffRequest extends FormRequest
             'name'=>'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'وارد کردن نام تعرفه اجباری است',
+        ];
+    }
 }

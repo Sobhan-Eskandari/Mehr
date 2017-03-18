@@ -122,7 +122,7 @@ class marketController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param marketRequest|Request $request
      * @return Redirect
      */
     public function store(marketRequest $request)
@@ -273,8 +273,10 @@ class marketController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param $marketId
+     * @param $sellerId
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
     public function edit($marketId,$sellerId)
     {
@@ -350,8 +352,8 @@ class marketController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param EditMarketRequest|Request $request
+     * @param  int $id
      * @return Redirect
      */
     public function update(EditMarketRequest $request, $id)
@@ -477,14 +479,13 @@ class marketController extends Controller
         Session::flash('message', 'فروشگاه به روز شد');
 
         return redirect('/markets');
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Redirect
      */
     public function destroy($id)
     {

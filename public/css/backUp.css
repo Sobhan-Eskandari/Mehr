@@ -49,7 +49,7 @@ sideBar
     font-weight: 200;
 }
 h5.zhenic_title,h5.admin_side_title{
-    text-align: center;
+    text-align: right;
     color: white;
     margin: 0;
 }

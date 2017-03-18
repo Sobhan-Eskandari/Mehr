@@ -267,7 +267,12 @@
         <!--shopping title-->
         <div class="container">
             <div class="row">
-                <h2 class="best_title">مطب های ما</h2>
+                <div class="col-lg-11 col-md-11">
+                    <h2 style="padding-left: 7%;" class="best_title">مطب های ما</h2>
+                </div>
+                <div class="col-lg-1 col-md-1" id="shahr">
+                    {!! Form::select('shahr', [0 => 'همه', 1 => 'بندر انزلی', 2 => 'رشت', 3 => 'لاهیجان'], 0,['class'=>'btn dropdown-toggle btn_all','style'=>'border-radius: 25px;margin-top: 10px;border: 2px solid #605ca8;']) !!}
+                </div>
             </div>
         </div>
 
@@ -277,30 +282,38 @@
             <div class="row ">
                 <!--first card-->
                 @foreach($normalMarkets as $market)
-                    @if($market->market_type == 0)
-                        <div class="col-md-3 col-xs-6 pull-right thumbnail padding">
-                            <a href="{{ route('stores.show', $market->id) }}" class="detail_title">
-                            <div class="opac_layer">
-                                @if(count($market->photos) >= 1)
-                                    <img src="marketsPhotos/{{ $market->photos[0]['address'] }}" class="img-fluid radious_img" alt="Responsive image">
-                                @else
-                                    <img src="images/cardImage.jpg" class="img-fluid radious_img" alt="Responsive image">
-                                @endif
-                                <div class="row">
-                                    <div class="col-xs-10 col-xs-offset-1">
-                                        <div class="back_layer">
-                                            <h2 class="name_shopping">{{ $market->market_name }}</h2>
-                                            <div class="btn_upper">
-                                                <span class="discunt_btn_img">{{ $market->city }}</span>
-                                            </div>
+                    @if($market->city == 'رشت')
+                        <div class="col-md-3 col-xs-6 pull-right thumbnail padding rasht all">
+                        @elseif($market->city == 'لاهیجان')
+                            <div class="col-md-3 col-xs-6 pull-right thumbnail padding lahijan all">
+                        @elseif($market->city == 'بندر انزلی')
+                            <div class="col-md-3 col-xs-6 pull-right thumbnail padding anzali all">
+                        @endif
+                        <div class="opac_layer">
+                        @if(count($market->photos) >= 1)
+                            <img src="marketsPhotos/{{ $market->photos[0]['address'] }}" class="img-fluid radious_img" alt="Responsive image">
+                        @else
+                            <img src="images/cardImage.jpg" class="img-fluid radious_img" alt="Responsive image">
+                        @endif
+                        <div class="row">
+                            <div class="col-xs-10 col-xs-offset-2">
+                                <div class="back_layer">
+                                    <h2 class="name_shopping">{{ $market->market_name }}</h2>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-6 pull-right">
+                                            <h3 class="detail_title"><a href="{{ route('stores.show', $market->id) }}" class="detail_title">مشاهده جزییات</a></h3>
+                                        </div>
 
+                                        <div class="col-xs-6 pull-left btn_upper">
+                                            <span class="discunt_btn_img">{{ $market->city }}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            </a>
                         </div>
-                    @endif
+                    </div>
+                </div>
                 @endforeach
 
             </div>
@@ -493,4 +506,33 @@
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+        $(function () {
+            $("#shahr").on("change", function () {
+                //console.log($("#shahr :selected").val());
+                if($("#shahr :selected").text() == 'همه'){
+                    $(".all").fadeIn();
+                }
+
+                if($("#shahr :selected").text() == 'بندر انزلی'){
+                    //console.log($("#shahr :selected").val());
+                    //$(".anzali").css({"display": "none"});
+                    $(".all").css({"display": "none"});
+                    $(".anzali").fadeIn();
+                }
+
+                if($("#shahr :selected").text() == 'رشت'){
+                    $(".all").css({"display": "none"});
+                    $(".rasht").fadeIn();
+                }
+
+                if($("#shahr :selected").text() == 'لاهیجان'){
+                    $(".all").css({"display": "none"});
+                    $(".lahijan").fadeIn();
+                }
+            });
+        });
+    </script>
+
 @endsection

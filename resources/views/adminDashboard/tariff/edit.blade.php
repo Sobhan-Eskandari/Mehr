@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    مهرکارت | نوع عضویت
+    مهرکارت | ویرایش دسته بندی تعرفه
 @endsection
 
 @section('pms')

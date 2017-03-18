@@ -1,7 +1,7 @@
 @extends('layouts.zhenicAdmin')
 
 @section('title')
-    مهرکارت | نوع عضویت
+    مهرکارت | ویرایش تعرفه
 @endsection
 
 @section('js2')
@@ -60,7 +60,7 @@
                     {!! Form::label('cost','قیمت تعرفه') !!}
                     {!! Form::text('cost',null,['class'=>'form-control inputCategory','id'=>'inputCategory','tabindex'=>'2']) !!}
                     {!! Form::label('tariff','نوع تعرفه') !!}
-                    {!! Form::select('tariff[]',\App\Tariff::pluck('name','id')->toArray(), $tariff->tariffs->pluck('id')->toArray(),['class'=>'selectpicker','multiple',"tabindex"=>"3",'data-live-search'=>'true']) !!}
+                    {!! Form::select('tariff[]',\App\Tariff::pluck('name','id')->toArray(), $tariff->tariffs->pluck('id')->toArray(),['class'=>'selectpicker',"tabindex"=>"3",'data-live-search'=>'true']) !!}
                     <br>
                     {!! Form::label('desc','توضیحات') !!}
                     {!! Form::textarea('desc',null,['class'=>'form-control inputCategory','id'=>'inputCategory','tabindex'=>'4','rows'=>'3']) !!}
@@ -78,6 +78,6 @@
 @endsection
 
 
-@section('tariff')
+@section('tariffs')
     active
 @endsection
