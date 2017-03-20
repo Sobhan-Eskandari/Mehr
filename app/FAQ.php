@@ -10,6 +10,9 @@ class FAQ extends Model
     use SoftDeletes;
 
     protected $fillable = [
+        /*
+         * ارایه حاوی فیلد های لازم به پر شدن
+         */
         'question',
         'answer',
     ];

@@ -25,22 +25,25 @@ class AdminCreateRequest extends FormRequest
     {
         return [
             'first_name'=>'required',
-            'last_name'=>'required',
-            'social_security_number'=>'required|digits:10|unique:admins,social_security_number',
-            'education'=>'nullable',
+            'last_name'=>'required',//یعنی لازم است
+            'social_security_number'=>'required|digits:10|unique:admins,social_security_number',//باید ۱۰ رقم باشد و نمی تواند تکراری باشد
+            'education'=>'nullable',//میتواند مقدار Null داشته باشد یعنی مقدار وارد نشود
             'occupation'=>'nullable',
             'state'=>'required',
             'city'=>'required',
             'address'=>'required',
-            'zip'=>'nullable|unique:admins,zip|digits:10',
+            'zip'=>'nullable|unique:admins,zip|digits:10',//zip:باید از نوع فایل zip‌باشد
             'home_tel'=>'nullable|digits:11',
             'work_tel'=>'nullable|digits:11',
             'emergency_tel'=>'nullable|digits:11',
             'cell_1'=>'required|digits:11|unique:admins,cell_1',
             'cell_2'=>'nullable|digits:11|unique:admins,cell_2',
-            'email'=>'required|email|unique:admins,email',
+            'email'=>'required|email|unique:admins,email',//email:باید eamil باشد
             'password'=>'required|min:6|confirmed',
             'password_confirmation'=>'required|min:6',
+            /*
+             * در این تابع بر اساس نام هر فیلد در فرم ساخت یا ادیت ادمین قوانین لازم برای ان فیلد را تعیین میکنیم
+             */
         ];
     }
 
@@ -52,6 +55,9 @@ class AdminCreateRequest extends FormRequest
     public function messages()
     {
         return [
+            /*
+             * در این تابع پیام ها ی اعتبار سنجی را مناسب با زبان مورد نظر تعیین میکنیم
+             */
             'first_name.required' => 'وارد کردن نام اجباری است',
             'last_name.required'  => 'وارد کردن نام خانوادگی اجباری است',
             'social_security_number.required' => 'وارد کردن کد ملی اجباری است',

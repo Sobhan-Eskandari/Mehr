@@ -10,7 +10,14 @@ use stdClass;
 
 class sms extends Controller
 {
+    /*
+     * تبع ها ی مورد استفاده findUser و  findUUser
+     */
     public function findUser(Request $request){
+        /*
+         *در این تابع اگر شماره وارد شده در دیتا بیس موجود بود به صفحه ی ارسال پیام می رود و sms حاوی رمز جدید را ارسال می کند
+         * در غیر این صورت پیام موجود نبودن شماره را نمایش می دهد
+         */
         //dd($request);
         $cell = $request->all();
         $user = User::where('cell_1',$cell['cell'])->first();
@@ -26,6 +33,9 @@ class sms extends Controller
         }
     }
     public function findUUser(){
+ /*
+  * برای نمایش صفحه ی وارد کردن شماره تماس استفاده شده است
+  */
         return view('sms.findUser');
     }
     public function sms($number){

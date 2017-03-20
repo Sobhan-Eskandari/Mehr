@@ -16,7 +16,10 @@ class regTypeController extends Controller
      */
     public function index()
     {
-
+            /*
+             * این تابع برای نمایش نوع های عضویت در صفحه ی نوع عضویت از ساید بار استفاده می شود
+             *همچنین در این صفحه علاوه بر انواع عضویت فرم لازم برای ساخت هم وجود دارد
+             */
         return view('adminDashboard.regType.index', ['regTypes' => RegType::paginate(5)]);
     }
 
@@ -38,6 +41,9 @@ class regTypeController extends Controller
      */
     public function store(regTypeRequest $request)
     {
+        /*
+         * این تابع برای ذخیرع کردن نوع عضوبت استفاده می شود
+         */
         if(RegType::create($request->all())){
             session()->flash("message","created");
         }else{
@@ -65,6 +71,9 @@ class regTypeController extends Controller
      */
     public function edit($id)
     {
+        /*
+         * این تابع نوع عضوبت مورد نظر را یافته و برای نمایش یه صفحه ی ادیت می فرستد
+         */
 
         $regType = RegType::findOrFail($id);
 
@@ -80,6 +89,9 @@ class regTypeController extends Controller
      */
     public function update(regTypeRequest $request, $id)
     {
+        /*
+         * این تابع نوع عضویت تفییر یافته را به روز می کند سپس به صفحه همه ی redirect می شود
+         */
         $regType = RegType::find($id);
 
         if($regType->update($request->all())){
@@ -99,6 +111,9 @@ class regTypeController extends Controller
      */
     public function destroy($id)
     {
+        /*
+         * این تابع نوع عضویت را مربوطه را یافته و حذف می کند
+         */
         $regtype = RegType::findOrFail($id);
 
         if($regtype->delete()){

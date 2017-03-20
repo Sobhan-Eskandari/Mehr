@@ -18,6 +18,10 @@ class FAQController extends Controller
      */
     public function index()
     {
+        /*
+         * این تابع همه سوالات را پیدامی کند دسته بندی می کند در اخر برای نمایش
+         *  در در FAQ دیتا را به ان صفخه می فرستد
+         */
         $FAQs = FAQ::paginate(10);
         return view('adminDashboard.FAQ.index', compact('FAQs'));
     }
@@ -29,6 +33,9 @@ class FAQController extends Controller
      */
     public function create()
     {
+       /*
+        * این تابع به منظور نمابش صفحه ی ساخت faq مورد استفاده قرار می گیرد
+        */
         return view('adminDashboard.FAQ.create');
     }
 
@@ -41,7 +48,9 @@ class FAQController extends Controller
     public function store(FAQRequest $request)
     {
         $input = $request->all();
-
+/*
+ * این تابع با استفاده از مدل FAQ‌ مقدار دیتا ی جدیدی را در دیتا بیس ذخیره میکند سپس به صفحه ی همه ی faq ها redirect می شود
+ */
         $FAQ = FAQ::create($input);
 
         Session::flash('created', 'سوال ساخته شد');
@@ -68,6 +77,9 @@ class FAQController extends Controller
      */
     public function edit($id)
     {
+        /*
+         * این تابع با استفاده از مدل FAQ دیتای مورد نظر را پیدا میکند و برای تغییر به صفحه ی ادیت مورد نظر ارسال میکند
+         */
         $FAQ = FAQ::findOrFail($id);
         return view('adminDashboard.FAQ.edit', compact('FAQ'));
     }
@@ -81,6 +93,10 @@ class FAQController extends Controller
      */
     public function update(FAQRequest $request, $id)
     {
+        /*
+         * این تابع faq‌مورد نظر را پیدا می کند و اطلاعات جدید
+         *  را جایگزین اطلاعات قبلی میکند سپس به صفحه ی همه ی faq ها redirect میکند
+         */
         $input = $request->all();
 
         FAQ::findOrFail($id)->update($input);
@@ -98,6 +114,10 @@ class FAQController extends Controller
      */
     public function destroy($id)
     {
+        /*
+         * در این تابع faq به صورت موقت پاک می شود و
+         * زمان اپدیت و حذف موقت sync می شود سپس به صفحه ی همه ی faqها redirect می شود
+         */
         FAQ::findOrFail($id)->delete();
         $FAQ = FAQ::withTrashed()->whereId($id)->first();
         $allFAQ = FAQ::withTrashed()->whereId($id)->first();
@@ -111,6 +131,9 @@ class FAQController extends Controller
 
     public function FAQView()
     {
+        /*
+         * این تابع برای نمایش همه faq ها در صفحه مربوط به خود در سایت استفاده می شود
+         */
         $FAQs = FAQ::all();
         return view('main.FAQ', compact('FAQs'));
     }

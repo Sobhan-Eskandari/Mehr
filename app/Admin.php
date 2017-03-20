@@ -18,6 +18,9 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        /*
+         * دراین ارایه فلید های دیتا بیس که می توانند مقدار بگیرند را مشخص می کنیم
+         */
         'systemic_code',
         'first_name',
         'last_name',
@@ -53,7 +56,9 @@ class Admin extends Authenticatable
         'last_logged_in_at',
     ];
 
-    protected $dates = ['deleted_at'];
+    protected $dates = [/*
+این ارایه فلید soft delete را مشخص میکند
+*/'deleted_at'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -74,7 +79,10 @@ class Admin extends Authenticatable
     {
         $this->notify(new AdminResetPassword($token));
     }
-
+/*
+ * تابع های پایین به منظور بررسی وجود سطح دسترسی ادمین در صفحات مختلف داشبورد در Middleware به کار برده شده اند به
+ * این صورت که در صورت ۱ بودن در دیتا بیس مقدار true و در صورت 0 بودن مقدار false را برمیگرداند
+ */
     public function CreateCustomer(){
 
         if($this->create_user == 1){

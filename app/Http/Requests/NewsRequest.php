@@ -24,6 +24,9 @@ class NewsRequest extends FormRequest
     public function rules()
     {
         return [
+            /*
+             * قوانین اعمالی بر فرم شاخت یا ادیت خبر
+             */
             'title' => 'required',
             'body' => 'required',
         ];

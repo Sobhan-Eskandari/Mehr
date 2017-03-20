@@ -24,7 +24,10 @@ class FAQRequest extends FormRequest
     public function rules()
     {
         return [
-            'question' => 'required',
+            /*
+             * قوانین اعمال شده روی فلید های ساخت یا ادیت faq
+             */
+            'question' => 'required',//لزوم مقدار داشتن
             'answer' => 'required',
         ];
     }
@@ -32,6 +35,9 @@ class FAQRequest extends FormRequest
     public function messages()
     {
         return [
+            /*
+             *تابع مسیج های لازم
+             */
             'question.required' => 'وارد کردن سوال اجباری است',
             'answer.required' => 'وارد کردن جواب اجباری است',
         ];

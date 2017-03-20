@@ -31,6 +31,9 @@ class marketController extends Controller
      */
     public function index()
     {
+        /*
+         * این تابع برای نمایش همه مطب ها در صفحه ی مطب ها در از ساید بار استفاده می شود
+         */
         $markets = Market::paginate(8);
         return view('adminDashboard.market.index',compact('markets'));
     }
@@ -81,10 +84,16 @@ class marketController extends Controller
         $systemicCategories = Category::pluck('name','id')->all();
         $regTypes = RegType::pluck('name','id')->all();
         $tags = Tag::pluck('name','id')->all();
+        /*
+         * این تابع نمایش فرم ساخت فروشگاه استفاده می شود و اطلاعات لازم جهت ساخت شامل اطلاعات صاحب انواع دسته بندی دسته بندی سیستمی نوع عضویت و تگ ها نیز ارسال می کند
+         */
         return view('adminDashboard.market.create',compact('user','states','marketCategories','systemicCategories','regTypes','tags'));
     }
     //////find seller
     public function searchSeller(Request $request){
+        /*
+         * صاحب را بر اساس نام ان جست و جو می کند
+         */
         $fullname = $request->name;
         $name = explode(" ",$fullname);
         if(!isset($name[1])){
@@ -99,11 +108,17 @@ class marketController extends Controller
     }
 
     public function searchSSeller(){
+        /*
+         * نمایش صفحه ی جست وجوی صاحب
+         */
         return view('adminDashboard.market.findOwner');
     }
     //////find marketer
 
     public function searchMarketer(Request $request){
+        /*
+         * برای جستو جوی معرف بر اساس نام استفتده می شود
+         */
         $fullname = $request->name;
         $name = explode(" ", $fullname);
         if (!isset($name[1])) {
@@ -127,23 +142,29 @@ class marketController extends Controller
      */
     public function store(marketRequest $request)
     {
+        /*
+         * برای ذخیره کردن مطب استفاده می شود
+         */
         $newTagId=[];
         $input = $request->all();
 
         foreach ($input as $key => $value){
             if($value == ''){
                 $input[$key] = null;
+                //اگر فیلدی در فرم خالی بد=ود ان را با مقدارnull برای ذخیره کردن در دیتابیس پر می کند
             }
         }
 
-        $input['contract_start']=str_replace('/','-',$request->contract_start);
+        $input['contract_start']=str_replace('/','-',$request->contract_start);///برای جاگزین کردن بک اسلش بجای دش در فیلد تاریخ استفاده می شود
         $input['contract_end']=str_replace('/','-',$request->contract_end);
 
         if(empty($input['contract_start'])){
             $input['contract_start'] = jDate::forge('now')->format('date');
+            // اگر تاریخ شروع قرار داد خالی بود تاریخ امروز را به صورت پیش فرض به عنوان شروع قرار داد انتخاب می کند
         }
 
         if(empty($input['contract_end'])){
+            //اگر تارخ پایان خالی بود به صورت پیش فرض یک سال بعد را برای پایان قرار داد در نظر می گیرد
             $end = explode('-',$input['contract_start']);
             $end[0] = $end[0] + 1;
             $end = implode('-',$end);
@@ -157,6 +178,7 @@ class marketController extends Controller
         $input['creator_id'] = 0;
 
         if($newTags = $request->newTags){
+            //تگ هی جدیدی که سازنده وارد می کند را به وجود می اورد
             $newTagss = explode(",",$newTags);
             foreach ($newTagss as $newTag){
                 $result = Tag::whereName($newTag)->first();
@@ -172,6 +194,7 @@ class marketController extends Controller
         $market = Market::create($input);
 
         if($tags = $request->tags || !empty($newTagId)){
+            //تگ های مربوط به این فرشگاه را ذخیره می کند
             $tags = $request->tags;
             if(!empty($newTagId)){
                 foreach ($newTagId as $ids){
@@ -183,20 +206,27 @@ class marketController extends Controller
 
         if($categories = $request->categories){
             $market->categories()->attach($categories);
+            //دسته بندی مربوط به این فروشگاه را به وجود می اورد
         }
 
 
 
         if($tariffs = $request->tariff){
             $market->tariff2s()->attach($tariffs);
+            //تعرفه مربوط به این فروشگاه را به وجود می اورد
+
         }
 
         if($regType = $request->regType){
             $market->regTypes()->attach($regType);
+            //توع عضوبت مربوط به این فروشگاه را به وجود می اورد
+
         }
 
         if($marketCategories = $request->marketsCategories){
             $market->mategories()->attach($marketCategories);
+            //دسته بندی فرشگاه مربوط به این فروشگاه را به وجود می اورد
+
         }
 
         $images[] = $request->file('img1');
@@ -204,6 +234,7 @@ class marketController extends Controller
         $images[] = $request->file('img3');
 
         foreach ($images as $image){
+            // ۳ عکس مربوط به هر فروشگاه را ایجادد می کند
             if($image) {
                 $name = time() . $image->getClientOriginalName();
                 $photo = Photo::create(['address' => $name]);
@@ -238,6 +269,10 @@ class marketController extends Controller
      */
     public function show($id)
     {
+
+        /*
+         * برای نمایش اظلاعات فرشگاه استفاده می شود
+         */
         $mategoryName = "";
         $TagName = "";
         $categoryName = "";
@@ -329,9 +364,15 @@ class marketController extends Controller
         }
 //         dd($images);
 //        dd($market->logo['address']);
+        /*
+         * ارسال داده ها ی فروشگاه مورد نظر برای تغییر
+         */
         return view('adminDashboard.market.edit',compact('user','market','states','marketCategories','systemicCategories','regTypes','tags','images'));
     }
     public function searchSellerEdit(Request $request,$marketId){
+        /*
+         * برای تغییر صاحب فروشگاه در صفحه ی ادیت استفاده می شود
+         */
         $fullname = $request->name;
         $name = explode(" ",$fullname);
         if(!isset($name[1])){
@@ -358,6 +399,9 @@ class marketController extends Controller
      */
     public function update(EditMarketRequest $request, $id)
     {
+        /*
+         * اطلاعات تغییر کرده در دیتابیس را به روز می کند
+         */
         $input = $request->all();
 
         foreach ($input as $key => $value){
@@ -504,6 +548,9 @@ class marketController extends Controller
     }
 
     public function findmarket(Request $request){
+        /*
+         * این تابع مارکت را بر اساس نام  شهر استان دسته بندی ها تگ  جست وجو می کند
+         */
         $marketsName = Market::where('market_name','like',"%{$request->name}%")->orWhere('city', 'like', "%{$request->name}%")
             ->orWhere('state', 'like', "%{$request->name}%")->get();
 

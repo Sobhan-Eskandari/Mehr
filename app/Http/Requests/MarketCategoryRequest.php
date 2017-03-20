@@ -24,6 +24,9 @@ class MarketCategoryRequest extends FormRequest
     public function rules()
     {
         return [
+            /*
+             * قوانین اعمالی بر فرم ساخت و ادیت
+             */
             'name'=>'required'
         ];
     }
@@ -31,6 +34,9 @@ class MarketCategoryRequest extends FormRequest
     public function messages()
     {
         return [
+            /*
+             * پیام لازم
+             */
             'name.required' => 'وارد کردن دسته بندی فروشگاه اجباری است',
         ];
     }

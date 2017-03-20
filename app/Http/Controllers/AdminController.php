@@ -22,6 +22,11 @@ class AdminController extends Controller
      */
     public function index()
     {
+        /*
+         * ادمین ها را برای نمایش پیدا میکند به اینصورت که در هر صفحه ۵ ادمین نمایش داده می شود
+                     *  سپس داده ها برای نمابش به view فرستاده می شود
+         * همچنین اطلاعات سایت در این صفحه پیدا شده و به view تنظیمات فرستاده می شود
+         */
         return view('adminDashboard.setting.index', ['admins' => Admin::paginate(5), 'siteInfo'=> SiteInfo::findOrFail(1)]);
     }
 
@@ -66,6 +71,9 @@ class AdminController extends Controller
             'همدان'=>'همدان',
             'یزد'=>'یزد'
         ];
+        /*
+         * این تابع برای نمایش صفحه ی ساخت ادمین است و همین طور شهر های مجاز برای انتخاب را نیز به view ارسال میکند
+         */
         return view('adminDashboard.setting.createAdmin', compact('states'));
     }
 
@@ -77,6 +85,10 @@ class AdminController extends Controller
      */
     public function store(AdminCreateRequest $request)
     {
+        /*
+         * این تابع ادمین را ذخیره میکند در ابتدا پسورد را bcrypt میکند سپس ادمین را ساخته یک پیام سشن برای اطلاع سازنده از ساخته شدن
+         * پر میکند سپس به view تنظیمات redirect می شود و پیام ساخته شدن را نمایش می دهد
+         */
         $input = $request->all();
 
         $input['password'] = bcrypt($request->password);
@@ -143,7 +155,10 @@ class AdminController extends Controller
             'همدان'=>'همدان',
             'یزد'=>'یزد'
         ];
-
+/*
+ * این تابع صفحه ی ادیت ادمین را نمایش می دهد به این صورت که ابتدا ادمین مورد نظر را پیدا کرده سپس اطلاعاتش را برای
+ *  ادیت به View مورد نظر ارسال میکند
+ */
         return view('adminDashboard.setting.editAdmin', compact('admin', 'states'));
     }
 
@@ -182,7 +197,11 @@ class AdminController extends Controller
         Session::flash('admin_updated', 'ادیمن به روز رسانی شد');
 
         $admin->update($input);
-
+/*
+ * ادمین را پیدا کرده اطلاعات تغییر یافته را بررسی کرده مانند رمز عبور یا پسورد در صورت تغییر
+ *  این اطلاعات را به روز کرده و ادمین را در Db‌ اپدیت میکند
+ *  در اخر به صفحه ی تنظیمات redirect‌ شده و پیام ادیت شدن را نمایش می دهد
+ */
         return redirect('/settings');
     }
 
@@ -197,7 +216,10 @@ class AdminController extends Controller
         Admin::findOrFail($id)->delete();
 
         Session::flash('deleted_user', 'ادمین پاک شد');
-
+/*
+ * ادمین مورد نظررا پیدا کرده از دیتا بیش حذف می کند سپس به صفحه ی تنظیمات redirect شده و
+ *  پیام پاک شدن را نمایش می دهد
+ */
         return redirect('/settings');
     }
 
@@ -264,7 +286,12 @@ class AdminController extends Controller
             $photoToSave = Photo::findOrFail($photo->id);
             $siteInfo->photos()->save($photoToSave);
         }
-
+/*
+ * این تابع اطلاعات سایت را تغییر می دهد به این صورت که بعد از در خواست تغییر اطلاعات تغییر
+ *  یافته را جایگز ین اطلاعات قبلی می کند و در هر If ‌بررسی میکند
+ * در صورت تغییر هر عکس عکس جدید برای اسلایدر هارا جایگزین می کند
+ * در اخر به صفحه ی تنظیمات redirect می شود
+ */
         $siteInfo->update($input);
 
         return redirect('/settings');
