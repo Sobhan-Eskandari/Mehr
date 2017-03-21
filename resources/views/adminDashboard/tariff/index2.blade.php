@@ -4,15 +4,7 @@
     مهرکارت | تعرفه
 @endsection
 @section('js2')
-    {{--<link type="text/css" rel="stylesheet" href="../../css/bootstrap.css">--}}
-    {{--<link type="text/css" rel="stylesheet" href="../../css/bootstrap-select.css">--}}
-    {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>--}}
-    {{--<script src="../../js/jquery-2.1.4.min.js"></script>--}}
-    {{--<script src="../../js/bootstrap.min.js"></script>--}}
-    {{--<script src="../../js/bootstrap-select.min.js"></script>--}}
     <link type="text/css" rel="stylesheet" href="../../css/persianDatepicker-default.css" />
-    {{--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">--}}
-    {{--<script src="../../js/state-city.js"></script>--}}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/bootstrap-select.css">
@@ -21,8 +13,6 @@
     <script src="../../js/bootstrap-select.min.js"></script>
     <link type="text/css" rel="stylesheet" href="../../css/persianDatepicker-default.css" />
     <script src="../../js/state-city.js"></script>
-
-    {{--<script src="../js/state-city.js"></script>--}}
 @endsection
 @section('pms')
     css/pms.css

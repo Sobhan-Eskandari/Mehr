@@ -13,6 +13,20 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        /**
+         * primary key: id
+         * the systemic code that was going to be stored in employer db: systemic_code
+         * name: first_name and last_name
+         * zip code: zip
+         * home telephone number: home_tel
+         * work telephone number: work_tel
+         * emergency telephone number: emergency_tel
+         * first cellphone number: cell_1
+         * second cellphone number: cell_2
+         * the person who absorbed this user: marketer
+         * the person who told the user about Mehr card: acquainted_by
+         * user explanation: text
+         */
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->string('systemic_code')->nullable()->default(0);

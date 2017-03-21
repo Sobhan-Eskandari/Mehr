@@ -13,6 +13,14 @@ class CreateMessagesTable extends Migration
      */
     public function up()
     {
+        /**
+         * primary key: id
+         * name of user: name
+         * phone number of user: contact_number
+         * email of user: email
+         * the actual message: message
+         * message is read or not: read
+         */
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();

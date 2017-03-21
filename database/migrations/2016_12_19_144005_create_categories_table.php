@@ -13,6 +13,10 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
+        /**
+         * primary key:id
+         * name of category: name
+         */
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->string('name')->nullable();

@@ -13,8 +13,14 @@ class CreateTariff2sTable extends Migration
      */
     public function up()
     {
+        /**
+         * primary key: id
+         * name of the tariff: name
+         * price of tariff: cost
+         * description about tariff: desc
+         */
         Schema::create('tariff2s', function (Blueprint $table) {
-            $table->bigincrements('id');
+            $table->bigIncrements('id');
             $table->string('name');
             $table->string('cost');
             $table->text('desc');

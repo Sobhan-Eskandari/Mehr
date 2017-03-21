@@ -14,6 +14,13 @@ use Illuminate\Pagination\Paginator;
 
 class SearchController extends Controller
 {
+    /**
+     * the main search function in the site on navbar, get the input, separate it into single words,
+     * searches markets name, tags, market categories, stores it in the tracks table
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function search(Request $request){
         $keys = $request->search;
         $keys = trim($keys);
@@ -35,7 +42,7 @@ class SearchController extends Controller
         if(!isset($key[2])){
             $key[2]=$key[0];
         }
-        //dd($key);
+
         $marketsName = Market::
         Where('market_name', 'like', "%{$key[0]}%")
             ->orWhere('state', 'like', "%{$key[0]}%")
@@ -114,13 +121,11 @@ class SearchController extends Controller
         $sliders = $siteInfo->photos;
         return view('main.stores',compact('markets','market_type','states','specialMarkets', 'sliders'));
     }
+
+    /**
+     * return user back to stores page after finding results
+     */
     public function searche(){
         return redirect('/stores');
     }
-       public function json(Request $request){
-        return response()->json([
-    'name' => 'Abigail',
-    'state' => 'CA'
-    ]);
-}
 }

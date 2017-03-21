@@ -10,9 +10,7 @@ use Illuminate\Http\Request;
 class StoresController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * return the view of all markets which is useless at the moment
      */
     public function index()
     {
@@ -78,10 +76,8 @@ class StoresController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * get the desired market based on the given id, find it,
+     * see if it has any special discounts or not in any period and show it
      */
     public function show($id)
     {
@@ -143,137 +139,5 @@ class StoresController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function BestMarkets(){
-        $states = [
-            '0'=>'انتخاب کنید',
-            'آذربایجان شرقی'=>'آذربایجان شرقی',
-            'آذربایجان غربی'=>'آذربایجان غربی',
-            'اردبیل'=>'اردبیل',
-            'اصفهان'=>'اصفهان',
-            'البرز'=>'البرز',
-            'ایلام'=>'ایلام',
-            'بوشهر'=>'بوشهر',
-            'تهران'=>'تهران',
-            'چهارمحال و بختیاری'=>'چهارمحال و بختیاری',
-            'خراسان جنوبی'=>'خراسان جنوبی',
-            'خراسان رضوی'=>'خراسان رضوی',
-            'خراسان شمالی'=>'خراسان شمالی',
-            'خوزستان'=>'خوزستان',
-            'زنجان'=>'زنجان',
-            'سمنان'=>'سمنان',
-            'سیستان و بلوچستان'=>'سیستان و بلوچستان',
-            'فارس'=>'فارس',
-            'قزوین'=>'قزوین',
-            'قم'=>'قم',
-            'کردستان'=>'کردستان',
-            'کرمان'=>'کرمان',
-            'کرمانشاه'=>'کرمانشاه',
-            'کهکیلویه و بویراحمد'=>'کهکیلویه و بویراحمد',
-            'گلستان'=>'گلستان',
-            'گیلان'=>'گیلان',
-            'لرستان'=>'لرستان',
-            'مازندران'=>'مازندران',
-            'مرکزی'=>'مرکزی',
-            'هرمزگان'=>'هرمزگان',
-            'همدان'=>'همدان',
-            'یزد'=>'یزد'
-        ];
-
-        $market_type = Mategorty::pluck('name', 'name')->all();
-        $siteInfo = SiteInfo::findOrFail(1);
-        return view('main.best', ['specialMarkets' => Market::whereMarket_type(1)->paginate(20), 'states' => $states, 'market_type' => $market_type, 'sliders' => $siteInfo->photos]);
-    }
-
-    public function FilterResults(Request $request)
-    {
-        $input = $request->all();
-
-        if ($input['city'] == "شهر خود را انتخاب کنید..."){
-            $input['city'] = '';
-        }
-
-        if ($input['state'] == "0"){
-            $input['state'] = '';
-            $input['city'] = '';
-        }
-
-        isset($input['special']) ? $input['special'] = "1" : $input['special'] = "0";
-
-        if($input['percentage'] == 0){
-            $head = 0;
-            $tail = 100;
-        }
-        if($input['percentage'] == 1){
-            $head = 0;
-            $tail = 20;
-        }
-        if($input['percentage'] == 2){
-            $head = 20;
-            $tail = 40;
-        }
-        if($input['percentage'] == 3){
-            $head = 40;
-            $tail = 60;
-        }
-        if($input['percentage'] == 4){
-            $head = 60;
-            $tail = 80;
-        }
-        if($input['percentage'] == 5){
-            $head = 80;
-            $tail = 100;
-        }
-
-        $markets = Market::where('state', 'like', "%{$input['state']}%")
-            ->where('city', 'like', "%{$input['city']}%")
-//            ->whereBetween('normal_percentage', [$head, $tail])
-//            ->whereMarket_type($input['special'])
-            ->get();
-
-        /**
-         * working until the above
-         */
-
-        $states = [
-            '0'=>'انتخاب کنید',
-            'آذربایجان شرقی'=>'آذربایجان شرقی',
-            'آذربایجان غربی'=>'آذربایجان غربی',
-            'اردبیل'=>'اردبیل',
-            'اصفهان'=>'اصفهان',
-            'البرز'=>'البرز',
-            'ایلام'=>'ایلام',
-            'بوشهر'=>'بوشهر',
-            'تهران'=>'تهران',
-            'چهارمحال و بختیاری'=>'چهارمحال و بختیاری',
-            'خراسان جنوبی'=>'خراسان جنوبی',
-            'خراسان رضوی'=>'خراسان رضوی',
-            'خراسان شمالی'=>'خراسان شمالی',
-            'خوزستان'=>'خوزستان',
-            'زنجان'=>'زنجان',
-            'سمنان'=>'سمنان',
-            'سیستان و بلوچستان'=>'سیستان و بلوچستان',
-            'فارس'=>'فارس',
-            'قزوین'=>'قزوین',
-            'قم'=>'قم',
-            'کردستان'=>'کردستان',
-            'کرمان'=>'کرمان',
-            'کرمانشاه'=>'کرمانشاه',
-            'کهکیلویه و بویراحمد'=>'کهکیلویه و بویراحمد',
-            'گلستان'=>'گلستان',
-            'گیلان'=>'گیلان',
-            'لرستان'=>'لرستان',
-            'مازندران'=>'مازندران',
-            'مرکزی'=>'مرکزی',
-            'هرمزگان'=>'هرمزگان',
-            'همدان'=>'همدان',
-            'یزد'=>'یزد'
-        ];
-
-        $market_type = Mategorty::pluck('name', 'name')->all();
-        $siteInfo = SiteInfo::findOrFail(1);
-        $sliders = $siteInfo->photos;
-        return view('main.filter', compact('markets', 'states', 'market_type', 'sliders'));
     }
 }

@@ -16,6 +16,9 @@ class categoryController extends Controller
      */
     public function index()
     {
+        /**
+         * return the view of systemic category showing 5 in each page
+         */
         return view('adminDashboard.systemicCategory.index', ['categories' => Category::paginate(5)]);
     }
 
@@ -37,7 +40,9 @@ class categoryController extends Controller
      */
     public function store(categoryRequest $request)
     {
-        //dd($request->all());
+        /**
+         * get all inputs after validating using categoryRequest and store it in categories table
+         */
         if(Category::create($request->all())){
             session()->flash("message","created");
         }else{
@@ -65,9 +70,10 @@ class categoryController extends Controller
      */
     public function edit($id)
     {
-
+        /**
+         * return the view of editing systemic category page
+         */
         $category = Category::findOrFail($id);
-
         return view('adminDashboard.systemicCategory.edit',compact('category'));
     }
 
@@ -80,14 +86,15 @@ class categoryController extends Controller
      */
     public function update(categoryRequest $request, $id)
     {
+        /**
+         * get all inputs after validating using categoryRequest and update the desired systemic category
+         */
         $category = Category::find($id);
-
         if($category->update($request->all())){
             session()->flash("message","edited");
         }else{
             session()->flash("message","not edited");
         }
-
         return redirect('/systemicCategories');
     }
 
@@ -99,14 +106,15 @@ class categoryController extends Controller
      */
     public function destroy($id)
     {
+        /**
+         * find the systemic category and delete it
+         */
         $category = Category::findOrFail($id);
-
         if($category->delete()){
             session()->flash("message","deleted");
         }else{
             session()->flash("message","not deleted");
         }
-
         return redirect('/systemicCategories');
     }
 }

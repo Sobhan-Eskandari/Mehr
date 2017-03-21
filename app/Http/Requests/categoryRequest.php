@@ -28,6 +28,11 @@ class categoryRequest extends FormRequest
         ];
     }
 
+    /**
+     * translation of the shown errors in case of any
+     *
+     * @return array
+     */
     public function messages()
     {
         return [
