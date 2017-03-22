@@ -11,9 +11,7 @@ use App\Http\Controllers\Controller;
 class tariff2Controller extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * return the related view of tariff2 listing 5 item
      */
     public function index()
     {
@@ -31,10 +29,7 @@ class tariff2Controller extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * store new tariff and attach the tariff category to it
      */
     public function store(Tariff2Request $request)
     {
@@ -59,24 +54,16 @@ class tariff2Controller extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * return related view to editing of a tariff
      */
     public function edit($id)
     {
         $tariff = Tariff2::findOrFail($id);
-
         return view('adminDashboard.tariff.edit2',compact('tariff'));
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * store any changes to a tariff done in the edit section
      */
     public function update(Tariff2Request $request, $id)
     {
@@ -92,23 +79,17 @@ class tariff2Controller extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * delete the desired tariff based on the given id and detach any relation off it
      */
     public function destroy($id)
     {
         $tariff = Tariff2::findOrFail($id);
-//        $tariif = Tariff::findOrFail($id);
         $tariff->tariffs()->detach();
         if($tariff->delete()){
             session()->flash("message","deleted");
         }else{
             session()->flash("message","not deleted");
         }
-
         return redirect('/tariffs');
-
     }
 }

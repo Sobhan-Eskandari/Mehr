@@ -13,6 +13,10 @@ class CreatePhotosTable extends Migration
      */
     public function up()
     {
+        /**
+         * primary key: id
+         * the name of the photo after modifying it: address
+         */
         Schema::create('photos', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->string('address')->nullable();

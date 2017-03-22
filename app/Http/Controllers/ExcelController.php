@@ -11,9 +11,7 @@ use Maatwebsite\Excel\Facades\Excel;
 class ExcelController extends Controller
 {
     /**
-     * Return View file
-     *
-     * @var array
+     * returns the view of backup route
      */
     public function Backup()
     {
@@ -21,9 +19,12 @@ class ExcelController extends Controller
     }
 
     /**
-     * File Export Code
+     * opens a new spread sheet, fetch all users from users table,
+     * name the ss and prepare a downloadable excel file
      *
-     * @var array
+     * @param Request $request
+     * @param $type
+     * @return mixed
      */
     public function downloadBackupUsers(Request $request, $type)
     {
@@ -36,6 +37,14 @@ class ExcelController extends Controller
         })->download($type);
     }
 
+    /**
+     * opens a new spread sheet, fetch all markets from markets table,
+     * name the ss and prepare a downloadable excel file
+     *
+     * @param Request $request
+     * @param $type
+     * @return mixed
+     */
     public function downloadBackupMarkets(Request $request, $type)
     {
         $markets = Market::get()->toArray();
@@ -48,14 +57,15 @@ class ExcelController extends Controller
     }
 
     /**
-     * Import file into database Code
+     * fetch the file from input, load it in excel package,
+     * find the columns we need to receive and insert them in users table
      *
-     * @var array
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function uploadBackupUsers(Request $request)
     {
         if($request->hasFile('import_file_user')){
-//            if($request->file('import_file_user')->getClientOriginalExtension() === 'xlsx'){
             $path = $request->file('import_file_user')->getRealPath();
 
             $data = Excel::load($path, function($reader) {})->get();
@@ -64,9 +74,6 @@ class ExcelController extends Controller
 
                 foreach ($data->toArray() as $key => $value) {
                     if(!empty($value)){
-                        /**
-                         * the columns we want to add to database
-                         */
                         foreach ($value as $v) {
                             $insert[] = [
                                 'systemic_code' => $v['systemic_code'],
@@ -103,24 +110,25 @@ class ExcelController extends Controller
                         }
                     }
                 }
-
-
                 if(!empty($insert)){
                     User::insert($insert);
                     return back()->with('success','فایل با موفقیت بارگذاری شد');
                 }
-
             }
-//            }
         }
-
         return back()->with('error','لطفاً فایل خود را بررسی کنید، جایی از آن مشکل دارد!');
     }
 
+    /**
+     * fetch the file from input, load it in excel package,
+     * find the columns we need to receive and insert them in markets table
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function uploadBackupMarkets(Request $request)
     {
         if($request->hasFile('import_file_market')){
-//            if($request->file('import_file_market')->getClientOriginalExtension() === 'xlsx'){
             $path = $request->file('import_file_market')->getRealPath();
 
             $data = Excel::load($path, function($reader) {})->get();
@@ -129,9 +137,6 @@ class ExcelController extends Controller
 
                 foreach ($data->toArray() as $key => $value) {
                     if(!empty($value)){
-                        /**
-                         * the columns we want to add to database
-                         */
                         foreach ($value as $v) {
                             $insert[] = [
                                 'systemic_code' => $v['systemic_code'],
@@ -165,17 +170,12 @@ class ExcelController extends Controller
                         }
                     }
                 }
-
-
                 if(!empty($insert)){
                     Market::insert($insert);
                     return back()->with('success','فایل با موفقیت بارگذاری شد');
                 }
-
             }
-//            }
         }
-
         return back()->with('error','لطفاً فایل خود را بررسی کنید، جایی از آن مشکل دارد!');
     }
 }

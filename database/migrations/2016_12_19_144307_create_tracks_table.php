@@ -13,6 +13,11 @@ class CreateTracksTable extends Migration
      */
     public function up()
     {
+        /**
+         * primary key: id
+         * searched word: name
+         * hit counts for that word: count
+         */
         Schema::create('tracks', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->string('name')->nullable();

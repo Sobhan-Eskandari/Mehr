@@ -10,9 +10,16 @@ class Category extends Model
         'name'
     ];
 
+    /**
+     * relation to users
+     */
     public function users(){
         return $this->morphedByMany('App\User','categorable');
     }
+
+    /**
+     * relation to markets
+     */
     public function markets(){
         return $this->morphedByMany('App\Market','categorable');
     }

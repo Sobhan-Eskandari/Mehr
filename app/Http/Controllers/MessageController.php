@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Session;
 class MessageController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * return related view showing 10 items in each page
      */
     public function index()
     {
@@ -25,9 +23,7 @@ class MessageController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * return related view for sending a new message to an email address from dashboard
      */
     public function create()
     {
@@ -35,34 +31,22 @@ class MessageController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * store the message that user is sending from contact us form in messages table
      */
     public function store(SendMessageRequest $request)
     {
         $input = $request->all();
-
         Message::create($input);
-
         Session::flash('message_sent', 'پیام ارسال شد');
-
         return redirect('/');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * show the message selected from messages index page and mark it as read
      */
     public function show($id)
     {
         $message = Message::findOrFail($id);
-        /**
-         * mark the message as read
-         */
         $message->read = 1;
         $message->save();
         return view('adminDashboard.message.show', compact('message'));
@@ -92,38 +76,39 @@ class MessageController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * delete the desired message
      */
     public function destroy($id)
     {
         Message::findOrFail($id)->delete();
-
         Session::flash('message_deleted', 'پیام پاک شد');
-
         return redirect('/messages');
     }
 
+    /**
+     * email the response to a message from contact us form to the provided email address
+     */
     public function sendMail(SendMailRequest $request)
     {
         $input = $request->all();
-
         Mail::to($input['email'])->send(new ZhenicMailable($input));
-
         return redirect('/messages');
     }
 
+    /**
+     * email new message to any given email address provided in the input
+     */
     public function SendMailToUser(SendMailToUserRequest $request)
     {
         $input = $request->all();
         $input['name'] = '';
         Mail::to($input['email'])->send(new ZhenicMailable($input));
-
         return redirect('/messages');
     }
 
+    /**
+     * returns the contact us view
+     */
     public function ContactUsView()
     {
         $siteInfo = SiteInfo::findOrFail(1);

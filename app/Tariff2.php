@@ -11,9 +11,17 @@ class Tariff2 extends Model
         'cost',
         'desc'
     ];
+
+    /**
+     * relation to tariff category
+     */
     public function tariffs(){
         return $this->belongsToMany('App\Tariff');
     }
+
+    /**
+     * relation to markets
+     */
     public function markets(){
         return $this->belongsToMany('App\Market');
     }

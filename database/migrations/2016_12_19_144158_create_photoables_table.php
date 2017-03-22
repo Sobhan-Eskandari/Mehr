@@ -13,6 +13,12 @@ class CreatePhotoablesTable extends Migration
      */
     public function up()
     {
+        /**
+         * primary key: id
+         * foreign key: photo_id references id on photos table
+         * foreign key: photoable_id references id on any table using this table depending on the relation
+         * to determine the table in which this photo is used: photoable_type
+         */
         Schema::create('photoables', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('photo_id')->nullable();

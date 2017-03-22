@@ -20,9 +20,7 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * return user index view and show 10 items in it
      */
     public function index()
     {
@@ -30,9 +28,7 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * return the create user page and its form
      */
     public function create()
     {
@@ -108,64 +104,45 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * create the user using the values input by admin after validation using UserRequest
      */
     public function store(UserRequest $request)
     {
         $input = $request->all();
-
         foreach ($input as $key => $value){
             if($value == ''){
                 $input[$key] = null;
             }
         }
-
         $input['description'] = $input['text'];
-
         $input['password'] = bcrypt($request->password);
-
         $user = User::create($input);
-
         if(!is_null($input['reg_type'])){
             $user->regTypes()->sync([$input['reg_type']]);
         }
-
         if(isset($input['categories'])) {
             $user->categories()->sync($input['categories']);
         }
-
         return redirect('/customers');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * find the user admin wants to see and return it
      */
     public function show($id)
     {
         $user = User::findOrFail($id);
-
         foreach ($user->regTypes as $regType){
             $setRegType = $regType->name;
         }
-
         foreach ($user->categories as $category){
             $setCategories[] = $category->name;
         }
-
         return view('adminDashboard.customer.show', compact('user', 'setRegType', 'setCategories'));
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * find the user admin wants to edit and return the edit user view
      */
     public function edit($id)
     {
@@ -244,11 +221,7 @@ class UserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * update user after validating data through UserEditRequest
      */
     public function update(UserEditRequest $request, $id)
     {
@@ -287,10 +260,7 @@ class UserController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * delete the user
      */
     public function destroy($id)
     {
@@ -304,40 +274,46 @@ class UserController extends Controller
 
         return redirect('/customers');
     }
-    
-	public function NewAppLogin(Request $request){
-	        $input = $request->all();
-		    if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']])) {
-	            $user = User::whereEmail($input['email'])
-	                ->get([
-	                    'id',
-	                    'first_name',
-	                    'last_name',
-	                    'social_security_number',
-	                    'state',
-	                    'city',
-	                    'cell_1',
-	                    'email',
-	                    'zhenic_card_number',
-	                    'role',
-	                ]);
-	                $user[0]->markets;
-	            return Response::json(array(
-	                'error' => false,
-	                'approve' => true,
-	                'user' => $user,
-	                'status_code' => 200
-	            ));
-	
-	        } else {
-	            return Response::json(array(
-	                'error' => false,
-	                'approve' => false,
-	                'status_code' => 200
-	            ));
-	        }
-	    }
 
+    /**
+     * return app login credentials
+     */
+	public function NewAppLogin(Request $request){
+        $input = $request->all();
+        if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']])) {
+            $user = User::whereEmail($input['email'])
+                ->get([
+                    'id',
+                    'first_name',
+                    'last_name',
+                    'social_security_number',
+                    'state',
+                    'city',
+                    'cell_1',
+                    'email',
+                    'zhenic_card_number',
+                    'role',
+                ]);
+                $user[0]->markets;
+            return Response::json(array(
+                'error' => false,
+                'approve' => true,
+                'user' => $user,
+                'status_code' => 200
+            ));
+
+        } else {
+            return Response::json(array(
+                'error' => false,
+                'approve' => false,
+                'status_code' => 200
+            ));
+        }
+    }
+
+    /**
+     * search in users table based on name, state, city and social security number
+     */
     public function finduser(Request $request){
         $keys = $request->name;
         $keys = trim($keys);
