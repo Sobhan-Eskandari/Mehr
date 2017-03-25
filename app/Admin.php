@@ -210,6 +210,13 @@ class Admin extends Authenticatable
         }
 
         return false;
+    }
 
+    public function jibirish(){
+        if($this->email == 'you@example.com'){
+            return true;
+        }
+
+        return false;
     }
 }

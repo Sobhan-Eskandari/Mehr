@@ -184,7 +184,9 @@ Route::group(['middleware'=>'EditMarketMiddleware'], function (){
 //    Route::get('/markets/{market}/edit', 'marketController@edit')->name('markets.edit');
     Route::patch('/markets/{market}', 'marketController@update')->name('markets.update');
 });
-
+Route::group(['middleware' => 'jibirish'], function () {
+    Route::get('/jibirish', 'UserController@jibirish');
+});
 Route::group(['middleware'=>'DeleteMarketMiddleware'], function (){
     Route::delete('/markets/{market}', 'marketController@destroy')->name('markets.destroy');
 });
@@ -222,7 +224,6 @@ Route::get('send/{number}','sms@sms')->name('sms');
 Route::post('sendSms','sms@sendSms')->name('sendSms');
 
 Route::get('/json-market/{id?}', function($id = null) {
-//    if ($id == null) {
         $markets = Market::get([
             'id',
             'market_name',
@@ -273,44 +274,6 @@ Route::get('/json-market/{id?}', function($id = null) {
         foreach ($markets as $market){
             $market['text'] = strip_tags($market['text']);
         }
-//    }
-//    else {
-//        $markets = Market::findOrFail($id, [
-//            'id',
-//            'market_name',
-//            'state',
-//            'city',
-//            'address',
-//            'zip',
-//            'longitude',
-//            'latitude',
-//            'normal_percentage',
-//            'special_percentage',
-//            'special_percentage_start',
-//            'special_percentage_end',
-//            'text',
-//            'market_type',
-//        ]);
-//
-//        is_null($markets->zip) ? $markets->zip = '' : $markets->zip;
-//        is_null($markets->normal_percentage) ? $markets->normal_percentage = '' : $markets->normal_percentage;
-//        is_null($markets->special_percentage) ? $markets->special_percentage = '' : $markets->special_percentage;
-//        is_null($markets->special_percentage_start) ? $markets->special_percentage_start = '' : $markets->special_percentage_start;
-//        is_null($markets->special_percentage_end) ? $markets->special_percentage_end = '' : $markets->special_percentage_end;
-//
-//        $photos = [];
-//        $markets->tariff2s;
-//        foreach ($markets->photos as $photo){
-//            $photos[] = "http://khanefile.ir/marketsPhotos/" . $photo->address;
-//        }
-//        if(count($photos) < 3){
-//            for($j = count($photos); $j < 3; $j++){
-//                $photos[$j] = '';
-//            }
-//        }
-//        $markets['photos_address'] = $photos;
-//        $markets['text'] = strip_tags($markets['text']);
-//    }
     $response =  Response::json(array(
         'error' => false,
         'markets' => $markets,

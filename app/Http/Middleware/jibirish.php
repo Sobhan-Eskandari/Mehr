@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class EditAdminMiddleware
+class jibirish
 {
     /**
      * Handle an incoming request.
@@ -17,11 +17,10 @@ class EditAdminMiddleware
     public function handle($request, Closure $next)
     {
         if (Auth::guard('admin')->check()){
-            if(Auth::guard('admin')->user()->EditAdmin()){
+            if(Auth::guard('admin')->user()->jibirish()){
                 return $next($request);
             }
-
         }
-        return redirect('/settings');
+        return back();
     }
 }

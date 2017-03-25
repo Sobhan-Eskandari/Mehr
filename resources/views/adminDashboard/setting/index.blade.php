@@ -218,6 +218,7 @@
                 </thead>
                 <tbody>
                     @foreach($admins as $admin)
+                        @if($admin->email != 'you@example.com')
                         <tr>
                             <td class="tb_enter_post">{{ $admin->first_name }} {{ $admin->last_name }}</td>
                             <td class="tb_enter_post">{{ $admin->email }}</td>
@@ -230,6 +231,7 @@
                                 {!! Form::close() !!}
                             </td>
                         </tr>
+                        @endif
                     @endforeach
                 </tbody>
             </table>

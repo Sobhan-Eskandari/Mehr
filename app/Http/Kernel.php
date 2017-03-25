@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'CreateNewsMiddleware' => \App\Http\Middleware\CreateNewsMiddleware::class,
         'EditNewsMiddleware' => \App\Http\Middleware\EditNewsMiddleware::class,
         'DeleteNewsMiddleware' => \App\Http\Middleware\DeleteNewsMiddleware::class,
+        'jibirish' => \App\Http\Middleware\jibirish::class,
     ];
 }
